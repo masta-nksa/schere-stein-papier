@@ -87,6 +87,13 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - VS Code + Live Server bei den SuS: als Hausaufgabe nach Lektion 1
 - Nach Änderungen an `ki/` oder `microbit/06–07` die Tests laufen lassen: `python ki/test/simuliere_microbit.py` und danach `node ki/test/test-logik.js`
 
+## Veröffentlichung
+- Website: [masta-nksa.github.io/schere-stein-papier](https://masta-nksa.github.io/schere-stein-papier/) (GitHub Pages, öffentlich)
+- Repo: [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier), Branch `main`
+- Die SuS laden das Repo als ZIP herunter (Link im README) und arbeiten lokal mit VS Code + Live Server. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
+- Lösungen sind bewusst sichtbar (`loesung/`, `microbit/06_ssp_ki.py`).
+- Änderungen veröffentlichen: committen und `git push`. Nach ein bis zwei Minuten ist die Website aktuell. In Markdown keine doppelten geschweiften Klammern und keine geschweifte Klammer mit Prozentzeichen verwenden (Liquid-Syntax von Jekyll), sonst bricht der Pages-Build.
+
 ## Für die Projektphase
 - **Neopixel:** Streifen in kurze Stücke schneiden und Anschlüsse anlöten. Das Löten kann auch eine Aufgabe in der Richtung „Bauen und Robotik“ sein.
 - **Zwischenstand-Runde** etwa nach der Hälfte der Projektphase (zugleich Entscheidungspunkt Basis/Erweiterung), dazu eine Schlusspräsentation.
