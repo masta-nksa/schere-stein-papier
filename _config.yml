@@ -1,0 +1,8 @@
+# GitHub Pages: zeigt die Markdown-Dateien als Webseiten (README.md wird zur Startseite).
+# Die Seiten in ki/ sind reines HTML und laufen direkt (https: Kamera und Web Serial funktionieren).
+title: "Freifach Informatik: Projekte mit KI und Hardware"
+description: "Schere-Stein-Papier mit micro:bit und KI im Browser, Neue Kantonsschule Aarau"
+lang: de
+theme: jekyll-theme-primer
+exclude:
+  - ki/test/ausgabe-microbit.txt

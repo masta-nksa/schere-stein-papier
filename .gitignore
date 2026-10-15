@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+ki/test/ausgabe-microbit.txt
+.vscode/
+.DS_Store
+Thumbs.db
+_site/
+Gemfile.lock
