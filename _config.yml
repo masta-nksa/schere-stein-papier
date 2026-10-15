@@ -6,3 +6,4 @@ lang: de
 theme: jekyll-theme-primer
 exclude:
   - ki/test/ausgabe-microbit.txt
+  - arbeits-repo/

@@ -1,0 +1,62 @@
+# Überträgt bei jedem Push die Arbeitsordner (ki, microbit, beispiele, vorlagen) ins Arbeits-Repo der SuS:
+# https://github.com/masta-nksa/schere-stein-papier-code
+# Der Deploy-Key (Secret ARBEITS_REPO_KEY) darf nur in dieses eine Repo schreiben.
+# Es wird immer ein normaler Commit gemacht (kein Force-Push), damit "Pull" bei den SuS sauber funktioniert.
+name: Arbeits-Repo abgleichen
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ki/**"
+      - "microbit/**"
+      - "beispiele/**"
+      - "vorlagen/**"
+      - "arbeits-repo/**"
+      - ".github/workflows/arbeits-repo.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: arbeits-repo
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  abgleichen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Material-Repo holen
+        uses: actions/checkout@v7
+        with:
+          path: material
+
+      - name: Arbeits-Repo holen
+        env:
+          KEY: ${{ secrets.ARBEITS_REPO_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
+          git clone git@github.com:masta-nksa/schere-stein-papier-code.git arbeit
+
+      - name: Ordner übertragen
+        run: bash material/arbeits-repo/aktualisieren.sh material arbeit
+
+      - name: Committen und pushen, falls sich etwas geändert hat
+        working-directory: arbeit
+        env:
+          NACHRICHT: ${{ github.event.head_commit.message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen für das Arbeits-Repo."
+            exit 0
+          fi
+          ERSTE_ZEILE="$(printf '%s' "${NACHRICHT:-Abgleich von Hand gestartet}" | head -n 1)"
+          git commit -m "Abgleich aus dem Material-Repo: ${ERSTE_ZEILE}" -m "Quelle: masta-nksa/schere-stein-papier@${GITHUB_SHA::7}"
+          git push origin HEAD:main

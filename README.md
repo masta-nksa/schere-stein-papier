@@ -8,13 +8,13 @@ Du kannst diese Seite auch zum Selbststudium nutzen. Jede Lektion hat lauffähig
 ## So arbeitest du mit dem Material
 1. **Lesen:** Die Lektionen findest du unten. Du kannst sie hier im Browser lesen.
 2. **Auf den Laptop holen:** Für die Vorlagen brauchst du alle Dateien in VS Code.
-   Klone das Repo mit VS Code, so kannst du später mit einem Klick Neues nachholen: **[Anleitung: Material mit GitHub und VS Code holen](anleitungen/github-vscode.md)**.
+   Klone dazu deinen **Arbeitsordner** [schere-stein-papier-code](https://github.com/masta-nksa/schere-stein-papier-code) mit VS Code. So kannst du später mit einem Klick Neues nachholen: **[Anleitung: Material mit GitHub und VS Code holen](anleitungen/github-vscode.md)**.
    Die Seiten in `ki/` öffnest du dort mit **Live Server**.
-   (Notlösung ohne Git: [alles als ZIP herunterladen](https://github.com/masta-nksa/schere-stein-papier/archive/refs/heads/main.zip).)
+   (Notlösung ohne Git: [Arbeitsordner als ZIP herunterladen](https://github.com/masta-nksa/schere-stein-papier-code/archive/refs/heads/main.zip).)
 3. **micro:bit-Programme:** Öffne die `.py`-Datei, kopiere den Code in den Editor [python.microbit.org](https://python.microbit.org) und lade ihn auf den micro:bit.
 4. **Lösungen:** Zu jeder Vorlage gibt es eine Lösung, z. B. `ki/01-erkennen/loesung/runde.js` und `microbit/06_ssp_ki.py`. Schau sie erst an, wenn du es selbst versucht hast: Du lernst am meisten, wenn du zuerst eigene Fehler findest.
 
-Das ganze Material liegt auch auf GitHub: [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier).
+Auf GitHub: [Arbeitsordner zum Klonen](https://github.com/masta-nksa/schere-stein-papier-code) · [ganzes Material mit Website](https://github.com/masta-nksa/schere-stein-papier)
 
 ## Der gemeinsame Einstieg: Schere-Stein-Papier
 
@@ -35,6 +35,7 @@ Das ganze Material liegt auch auf GitHub: [github.com/masta-nksa/schere-stein-pa
 ```
 lektionen/     Anleitungen zu den drei Einstiegslektionen
 anleitungen/   Material mit GitHub und VS Code holen
+arbeits-repo/  README und Abgleich für den Arbeitsordner schere-stein-papier-code
 microbit/      micro:bit-Programme (MicroPython) zu Lektion 1 und 2
 ki/            Browser-Seiten zu Lektion 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests
 vorlagen/      Projektplan und Milestones

@@ -89,7 +89,9 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 
 ## Veröffentlichung
 - Website: [masta-nksa.github.io/schere-stein-papier](https://masta-nksa.github.io/schere-stein-papier/) (GitHub Pages, öffentlich)
-- Repo: [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier), Branch `main`
+- **Material-Repo** (hier wird alles geändert): [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier), Branch `main`
+- **Arbeits-Repo** für die SuS (zum Klonen): [github.com/masta-nksa/schere-stein-papier-code](https://github.com/masta-nksa/schere-stein-papier-code). Es enthält nur `ki/` (ohne Tests), `microbit/`, `beispiele/`, `vorlagen/`, ein eigenes README (`arbeits-repo/README.md`) und die Empfehlung für Live Server.
+- **Abgleich:** Die GitHub-Action `.github/workflows/arbeits-repo.yml` überträgt diese Ordner bei jedem Push mit einem normalen Commit ins Arbeits-Repo. Sie schreibt mit einem Deploy-Key (Secret `ARBEITS_REPO_KEY`), der nur auf das Arbeits-Repo Zugriff hat. Status: im Material-Repo unter *Actions*. Von Hand starten: *Actions → Arbeits-Repo abgleichen → Run workflow*. **Nie direkt im Arbeits-Repo ändern**, sonst wird es beim nächsten Abgleich überschrieben.
 - Die SuS klonen das Repo mit VS Code ([Anleitung](../anleitungen/github-vscode.md)) und arbeiten lokal mit Live Server. Neues holen sie mit Commit und Pull. Wenn du später eine Vorlage änderst, an der die SuS schon arbeiten, kann es beim Pull Konflikte geben. Ändere Vorlagen deshalb möglichst vor der Lektion, oder lege neue Dateien an. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
 - Lösungen sind bewusst sichtbar (`loesung/`, `microbit/06_ssp_ki.py`).
 - Änderungen veröffentlichen: committen und `git push`. Nach ein bis zwei Minuten ist die Website aktuell. In Markdown keine doppelten geschweiften Klammern und keine geschweifte Klammer mit Prozentzeichen verwenden (Liquid-Syntax von Jekyll), sonst bricht der Pages-Build.

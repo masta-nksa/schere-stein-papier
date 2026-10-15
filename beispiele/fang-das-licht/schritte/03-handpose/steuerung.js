@@ -5,6 +5,9 @@
 // Falls links und rechts vertauscht sind: auf true setzen.
 const HAND_INVERT = false;
 
+// Anteil des Kamerabilds links und rechts, der als Spielrand zählt (0.15 = 15 %). Grösser = weniger Weg nötig.
+const HAND_RAND = 0.15;
+
 // Welcher Handpunkt steuert? 0 = Handgelenk, 8 = Zeigefingerspitze, 9 = Basis des Mittelfingers
 const PUNKT = 9;
 
@@ -35,8 +38,10 @@ function gotHands(results) {
   if (results && results.length > 0 && results[0].keypoints) {
     const kp = results[0].keypoints;
     const p = kp[PUNKT] || kp[0];
-    const vw = (handVideo && handVideo.elt && handVideo.elt.videoWidth) || 640;
-    handX = constrain(p.x / vw, 0, 1) * W;      // Kamerabreite auf Spielbreite umrechnen
+    // ml5 meldet x im Koordinatenraum des Video-Elements (hier 160 px), nicht der Kamera (z. B. 640 px)
+    const vw = (handVideo && handVideo.elt && (handVideo.elt.width || handVideo.elt.videoWidth)) || 160;
+    // Kamerabreite auf Spielbreite umrechnen; die äusseren Ränder des Bilds gelten als Spielrand
+    handX = constrain(map(p.x / vw, HAND_RAND, 1 - HAND_RAND, 0, 1), 0, 1) * W;
     seen = true;
   } else {
     handX = null;
