@@ -26,7 +26,10 @@ Kein Chrome/Edge? Dann **Save** drücken und die `.hex`-Datei auf das Laufwerk *
 
 Taste A zeigt ein lachendes Gesicht, Taste B ein trauriges.
 
-**Funktioniert es?** ☐ „Hallo“ läuft durch ☐ A und B zeigen verschiedene Gesichter
+**Funktioniert es?**
+
+- [ ] „Hallo“ läuft durch.
+- [ ] A und B zeigen verschiedene Gesichter.
 
 **Aufgaben**
 1. Ändere den Text, der am Anfang durchläuft.
@@ -40,7 +43,10 @@ Taste A zeigt ein lachendes Gesicht, Taste B ein trauriges.
 
 Schüttle den micro:bit. Der Beschleunigungssensor merkt das, und das Programm würfelt eine Zahl.
 
-**Funktioniert es?** ☐ Schütteln zeigt eine Zahl ☐ die Zahl ändert sich
+**Funktioniert es?**
+
+- [ ] Schütteln zeigt eine Zahl.
+- [ ] Die Zahl ändert sich.
 
 **Aufgaben**
 1. Mach einen Würfel von 1 bis 12.
@@ -55,7 +61,11 @@ Schüttle den micro:bit. Der Beschleunigungssensor merkt das, und das Programm w
 - **Taste A:** deine Wahl wechseln (Stein → Papier → Schere)
 - **Taste B:** bestätigen. Der micro:bit zeigt seine Wahl, dann das Ergebnis (✓, ✗ oder =).
 
-**Funktioniert es?** ☐ A wechselt die drei Bilder ☐ B zeigt die Wahl des micro:bit ☐ das Ergebnis stimmt
+**Funktioniert es?**
+
+- [ ] A wechselt die drei Bilder.
+- [ ] B zeigt die Wahl des micro:bit.
+- [ ] Das Ergebnis stimmt.
 
 **Verstehen:** Schau dir die Funktion `ergebnis()` an. Sie rechnet `(ich - gegner) % 3`.
 Probiere auf Papier aus, warum `1` „gewonnen“ bedeutet. (Stein = 0, Papier = 1, Schere = 2.)
@@ -71,7 +81,11 @@ Probiere auf Papier aus, warum `1` „gewonnen“ bedeutet. (Stein = 0, Papier =
 
 Jetzt zählt der micro:bit die Punkte und spielt Töne. Wer zuerst 3 Runden gewinnt, gewinnt das Spiel.
 
-**Funktioniert es?** ☐ der Spielstand läuft durch, z. B. `2:1` ☐ es gibt Töne ☐ nach 3 Siegen beginnt ein neues Spiel
+**Funktioniert es?**
+
+- [ ] Der Spielstand läuft durch, z. B. `2:1`.
+- [ ] Es gibt Töne.
+- [ ] Nach 3 Siegen beginnt ein neues Spiel.
 
 **Aufgaben**
 1. Ändere `ZIEL`, damit man 5 Runden gewinnen muss.
@@ -86,7 +100,10 @@ Jetzt zählt der micro:bit die Punkte und spielt Töne. Wer zuerst 3 Runden gewi
 Zwei micro:bits spielen gegeneinander. Beide laden das Programm und stellen **dieselbe** `GRUPPE` ein.
 Jedes Paar braucht eine **eigene** Zahl, sonst funkt ihr euch gegenseitig dazwischen.
 
-**Funktioniert es?** ☐ nach dem Abschicken dreht sich die Uhr ☐ wenn beide abgeschickt haben, sehen beide das Ergebnis
+**Funktioniert es?**
+
+- [ ] Nach dem Abschicken dreht sich die Uhr.
+- [ ] Wenn beide abgeschickt haben, sehen beide das Ergebnis.
 
 **Aufgaben**
 1. Zählt Punkte wie in Schritt 4.
@@ -99,7 +116,12 @@ Jedes Paar braucht eine **eigene** Zahl, sonst funkt ihr euch gegenseitig dazwis
 
 Wie schnell bist du? **Taste A** startet, das Display wird dunkel. Nach einer Zufallszeit leuchtet es ganz auf, und du drückst so schnell wie möglich **Taste B**. Der micro:bit misst die Zeit mit `running_time()` und zeigt sie in Millisekunden. Zu früh gedrückt? Dann zählt es nicht.
 
-**Funktioniert es?** ☐ nach dem Start wird das Display dunkel ☐ es leuchtet nach 2 bis 5 Sekunden auf ☐ deine Zeit läuft über das Display ☐ zu früh gedrückt zeigt ein trauriges Gesicht
+**Funktioniert es?**
+
+- [ ] Nach dem Start wird das Display dunkel.
+- [ ] Es leuchtet nach 2 bis 5 Sekunden auf.
+- [ ] Deine Zeit läuft über das Display.
+- [ ] Zu früh gedrückt zeigt ein trauriges Gesicht.
 
 **Aufgaben**
 1. Vergleicht eure Zeiten: Wer ist am schnellsten? Wirst du mit mehreren Versuchen schneller?
@@ -116,7 +138,11 @@ Drei micro:bits spielen gleichzeitig. Alle haben dieselbe `GRUPPE`, aber jeder e
 
 Funk kann Nachrichten verlieren. Darum wird jede Wahl mehrmals gefunkt, und jede Nachricht trägt eine **Rundennummer**. Nachrichten einer anderen Runde werden ignoriert, so zählt eine alte Wahl nicht in der neuen Runde.
 
-**Funktioniert es?** ☐ nach dem Abschicken dreht sich die Uhr ☐ wenn alle abgeschickt haben, sehen alle die Zeichen der anderen ☐ die Punkte stimmen (prüft nach: Stein gegen Schere = 1 Punkt)
+**Funktioniert es?**
+
+- [ ] Nach dem Abschicken dreht sich die Uhr.
+- [ ] Wenn alle abgeschickt haben, sehen alle die Zeichen der anderen.
+- [ ] Die Punkte stimmen (prüft nach: Stein gegen Schere = 1 Punkt)
 
 **Aufgaben**
 1. Was passiert, wenn nur zwei von drei abschicken? Wie lange wartet der micro:bit? (Tipp: `WARTEN_MS`.)

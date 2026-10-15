@@ -17,6 +17,7 @@ Geht „Send to micro:bit“ nicht, drücke **Save** und ziehe die `.hex`-Datei 
 ## Für Lektion 2 (KI im Browser)
 - **VS Code** mit der Erweiterung **Live Server**. Damit öffnest du Webseiten über `localhost`. Die Kamera funktioniert nur so (oder über `https`), nicht über eine direkt geöffnete Datei.
 - Eine **Webcam** (die eingebaute reicht)
+- **Git** und das Material als geklontes Repo in VS Code: [Anleitung: Material mit GitHub und VS Code holen](../anleitungen/github-vscode.md)
 
 ## Einmal früh anstossen: GitHub Student Developer Pack
 Mit dem Pack bekommst du **GitHub Copilot Student** (KI-Hilfe in VS Code). Die Verifizierung mit deiner Schul-Mail dauert einige Tage, mach sie deshalb in der ersten Woche:

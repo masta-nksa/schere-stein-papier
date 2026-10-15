@@ -1,0 +1,52 @@
+<!-- Eigene Ergänzungen für das Theme "primer" (wird von GitHub Pages in den <head> jeder Seite eingefügt) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
+<style>
+  /* Checklisten "Funktioniert es?": ohne Aufzählungspunkt, gut klickbare Kästchen */
+  .markdown-body ul.checkliste { list-style: none; padding-left: 0.2em; }
+  .markdown-body ul.checkliste li { margin: 0.35em 0; }
+  .markdown-body ul.checkliste label { cursor: pointer; }
+  .markdown-body ul.checkliste input[type=checkbox] {
+    width: 1.15em; height: 1.15em; margin: 0 0.55em 0 0; vertical-align: -0.2em; cursor: pointer;
+  }
+  .markdown-body ul.checkliste li.erledigt label { color: #57606a; text-decoration: line-through; }
+</style>
+<script>
+  // Macht aus "- [ ] Text" anklickbare Kästchen. Funktioniert, egal ob der Markdown-Prozessor schon
+  // Checkboxen erzeugt hat oder "[ ]" als Text stehen lässt. Die Haken werden im Browser gemerkt.
+  document.addEventListener('DOMContentLoaded', function () {
+    var schluessel = 'haken:' + location.pathname;
+    var gemerkt = {};
+    try { gemerkt = JSON.parse(localStorage.getItem(schluessel) || '{}'); } catch (e) { gemerkt = {}; }
+    var nr = 0;
+    document.querySelectorAll('.markdown-body li').forEach(function (li) {
+      var box = li.querySelector('input[type=checkbox]');
+      var ziel = li.firstElementChild && li.firstElementChild.tagName === 'P' ? li.firstElementChild : li;
+      if (!box) {
+        var text = ziel.firstChild;
+        if (!text || text.nodeType !== 3) return;
+        var m = /^\s*\[([ xX])\]\s*/.exec(text.nodeValue);
+        if (!m) return;
+        text.nodeValue = text.nodeValue.slice(m[0].length);
+        box = document.createElement('input');
+        box.type = 'checkbox';
+        box.checked = m[1] !== ' ';
+      }
+      // Kästchen und Text in ein <label> packen: Klick auf den Text setzt auch den Haken
+      var label = document.createElement('label');
+      while (ziel.firstChild) label.appendChild(ziel.firstChild);
+      if (box.parentNode) box.parentNode.removeChild(box);
+      label.insertBefore(box, label.firstChild);
+      ziel.appendChild(label);
+      box.disabled = false;
+      var id = nr++;
+      if (gemerkt[id] !== undefined) box.checked = gemerkt[id];
+      li.classList.toggle('erledigt', box.checked);
+      li.parentElement.classList.add('checkliste');
+      box.addEventListener('change', function () {
+        gemerkt[id] = box.checked;
+        li.classList.toggle('erledigt', box.checked);
+        try { localStorage.setItem(schluessel, JSON.stringify(gemerkt)); } catch (e) { /* ohne Speicher geht es auch */ }
+      });
+    });
+  });
+</script>

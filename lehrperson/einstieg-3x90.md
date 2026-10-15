@@ -84,13 +84,13 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - Kamera im Schul-WLAN prüfen, ebenso Zugriff auf `cdn.jsdelivr.net` (p5.js, TensorFlow.js, Teachable Machine) und auf den Modell-Link von Teachable Machine
 - Prüfen, ob Chrome oder Edge an der Schule **Web Serial** zulässt (kann per Richtlinie gesperrt sein)
 - Gruppennummern für die Paare vorbereiten (eine eigene Zahl pro Paar) und Plätze Rücken an Rücken einplanen
-- VS Code + Live Server bei den SuS: als Hausaufgabe nach Lektion 1
+- VS Code + Live Server + Git bei den SuS, Repo klonen: als Hausaufgabe nach Lektion 1 ([Anleitung](../anleitungen/github-vscode.md)). Zu Beginn von Lektion 2 kurz prüfen, wer es geschafft hat. Notlösung: ZIP-Download.
 - Nach Änderungen an `ki/` oder `microbit/06–07` die Tests laufen lassen: `python ki/test/simuliere_microbit.py` und danach `node ki/test/test-logik.js`
 
 ## Veröffentlichung
 - Website: [masta-nksa.github.io/schere-stein-papier](https://masta-nksa.github.io/schere-stein-papier/) (GitHub Pages, öffentlich)
 - Repo: [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier), Branch `main`
-- Die SuS laden das Repo als ZIP herunter (Link im README) und arbeiten lokal mit VS Code + Live Server. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
+- Die SuS klonen das Repo mit VS Code ([Anleitung](../anleitungen/github-vscode.md)) und arbeiten lokal mit Live Server. Neues holen sie mit Commit und Pull. Wenn du später eine Vorlage änderst, an der die SuS schon arbeiten, kann es beim Pull Konflikte geben. Ändere Vorlagen deshalb möglichst vor der Lektion, oder lege neue Dateien an. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
 - Lösungen sind bewusst sichtbar (`loesung/`, `microbit/06_ssp_ki.py`).
 - Änderungen veröffentlichen: committen und `git push`. Nach ein bis zwei Minuten ist die Website aktuell. In Markdown keine doppelten geschweiften Klammern und keine geschweifte Klammer mit Prozentzeichen verwenden (Liquid-Syntax von Jekyll), sonst bricht der Pages-Build.
 
