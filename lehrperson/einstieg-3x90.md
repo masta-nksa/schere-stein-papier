@@ -1,7 +1,7 @@
 # Einstieg: 3 × 90 Minuten (Lehrperson)
 
 Der Einstieg besteht aus vier **Etappen**: 0 Setup, 1 micro:bit, 2 KI im Browser, 3 Projektstart. Alle bauen dasselbe
-Mini-Projekt (Schere-Stein-Papier), das alle drei Projektrichtungen berührt. Ab Etappe 3 wird projektartig gearbeitet.
+Mini-Projekt (Schere-Stein-Papier), das alle vier Projektrichtungen berührt. Ab Etappe 3 wird projektartig gearbeitet.
 
 Die SuS gehen die Etappen **in ihrem eigenen Tempo**: Wer fertig ist, geht zur nächsten Etappe weiter. Die Zeitpläne
 unten sind ein **Richtplan** für drei Doppellektionen. Die kurzen Inputs (z. B. `ergebnis()` an der Tafel, das Protokoll)
@@ -17,6 +17,7 @@ Etappe 3 (Ideenmarkt, Gruppen bilden) findet gemeinsam statt. Schnelle können v
 | Spiele mit Gestensteuerung | Spielregeln, Zufall, Punkte, Multiplayer per Funk |
 | KI bewegt etwas | Kamera erkennt ein Handzeichen, Hardware reagiert |
 | Bauen und Robotik | Etappe 1 ist reine Hardware: Sensoren, Ausgaben, Funk |
+| Spieleprogrammierung | Spiellogik selbst programmieren (`ergebnis()`, `runde.js`), Zustände einer Runde (Countdown, Ergebnis) |
 
 Drei klar unterscheidbare Handzeichen sind zudem ideal für Teachable Machine.
 
@@ -60,7 +61,7 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 
 | Min. | Inhalt |
 |---|---|
-| 0–20 | Input: drei Richtungen, drei Stufen, Projektplan und Milestones |
+| 0–20 | Input: vier Richtungen, drei Stufen, Projektplan und Milestones |
 | 20–40 | Ideenmarkt: 2-Minuten-Pitch pro Idee |
 | 40–50 | Gruppen bilden (max. 3 oder allein) |
 | 50–90 | Projektplan ausfüllen, Milestone 0 und 1 definieren, erste Arbeitsschritte |
@@ -101,12 +102,23 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - **Abgleich:** Die GitHub-Action `.github/workflows/arbeits-repo.yml` überträgt diese Ordner bei jedem Push mit einem normalen Commit ins Arbeits-Repo. Sie schreibt mit einem Deploy-Key (Secret `ARBEITS_REPO_KEY`), der nur auf das Arbeits-Repo Zugriff hat. Status: im Material-Repo unter *Actions*. Von Hand starten: *Actions → Arbeits-Repo abgleichen → Run workflow*. **Nie direkt im Arbeits-Repo ändern**, sonst wird es beim nächsten Abgleich überschrieben.
 - Die SuS klonen das Repo mit VS Code ([Anleitung](../anleitungen/github-vscode.md)) und arbeiten lokal mit Live Server. Neues holen sie mit Commit und Pull. Wenn du später eine Vorlage änderst, an der die SuS schon arbeiten, kann es beim Pull Konflikte geben. Ändere Vorlagen deshalb möglichst früh, bevor die ersten SuS daran arbeiten, oder lege neue Dateien an. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
 - Lösungen sind bewusst sichtbar (`loesung/`, `microbit/06_ssp_ki.py`).
+- Für die Spieleprogrammierung gibt es ein drittes Repo, die Vorlage `spiel-vorlage`, und daraus die Team-Repos (siehe unten).
 - Änderungen veröffentlichen: committen und `git push`. Nach ein bis zwei Minuten ist die Website aktuell. In Markdown keine doppelten geschweiften Klammern und keine geschweifte Klammer mit Prozentzeichen verwenden (Liquid-Syntax von Jekyll), sonst bricht der Pages-Build.
 
 ## Für die Projektphase
 - **Neopixel:** Streifen in kurze Stücke schneiden und Anschlüsse anlöten. Das Löten kann auch eine Aufgabe in der Richtung „Bauen und Robotik“ sein.
 - **Zwischenstand-Runde** etwa nach der Hälfte der Projektphase (zugleich Entscheidungspunkt Basis/Erweiterung), dazu eine Schlusspräsentation.
 - **Lasercutter-Einführung** nach etwa vier Wochen Projektphase.
+
+## Team-Repos für die Spieleprogrammierung
+- **Vorlage:** Template-Repo [masta-nksa/spiel-vorlage](https://github.com/masta-nksa/spiel-vorlage), online unter [masta-nksa.github.io/spiel-vorlage](https://masta-nksa.github.io/spiel-vorlage/). Python mit pygame-ce, die GitHub-Action baut bei jedem Push mit pygbag und stellt das Spiel auf GitHub Pages. Eine Kopie liegt hier unter `spiel-vorlage/`. Es gibt keinen automatischen Abgleich: Änderungen an beiden Orten machen.
+- **Auf Lager:** `spiel-team-1` bis `spiel-team-5` (öffentlich, Pages eingeschaltet, Spiel schon online). Ein Ruleset «main schützen» verhindert Force-Push und das Löschen von `main`. Als Owner bist du davon ausgenommen.
+- **Vergeben:** Im Repo unter *Settings → Collaborators → Add people* die GitHub-Namen des Teams eintragen. Die SuS nehmen die Einladung an und folgen der [Anleitung für die SuS](../anleitungen/spiel-team-repo.md). Welches Team welches Repo hat, nicht hier notieren (öffentlich).
+- **Wer darf pushen:** nur die Eingeladenen und du. Alle anderen können das Repo nur lesen. Collaborators haben Schreibrechte auf das ganze Repo (auch auf den Workflow), aber nur du kannst einladen, die Sichtbarkeit ändern, das Repo löschen oder archivieren.
+- **Zurückgeben:** Collaborators entfernen. Zum Wiederverwenden besser ein neues Repo anlegen als ein altes zurücksetzen.
+- **Ein weiteres Repo anlegen:** *Use this template* in `spiel-vorlage`, Owner `masta-nksa`, Public. Danach *Settings → Pages → Source: GitHub Actions* und, falls der erste Lauf rot ist, *Actions → Spiel online stellen → Run workflow*. Mit der GitHub CLI geht das auch per Befehl (`gh repo create masta-nksa/spiel-team-6 --public --template masta-nksa/spiel-vorlage`, dann `gh api -X POST repos/masta-nksa/spiel-team-6/pages -f build_type=workflow`).
+- Änderungen an der Vorlage kommen **nicht** in schon angelegte Team-Repos.
+- **Vorher testen:** Im Schul-WLAN prüfen, ob `masta-nksa.github.io` und `pygame-web.github.io` erreichbar sind (von dort lädt der Browser Python und pygame-ce).
 
 ## Rahmen
 - Das Freifach ist freiwillig und wird nicht benotet. Milestones und Projektplan sind Orientierungshilfen ohne Abgabepflicht.

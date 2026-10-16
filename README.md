@@ -25,16 +25,17 @@ Auf GitHub: [Arbeitsordner zum Klonen](https://github.com/masta-nksa/schere-stei
 | [2](etappen/02-ki.md) | KI im Browser | Ein KI-Modell erkennt dein Handzeichen und spielt mit dem micro:bit |
 | [3](etappen/03-projektstart.md) | Projektstart | Idee, Team, Projektplan |
 
-## Danach: drei Richtungen für dein Projekt
+## Danach: vier Richtungen für dein Projekt
 - **Spiele mit Gestensteuerung:** ein Spiel, das du mit Kamera und KI steuerst
 - **KI bewegt etwas:** eine KI erkennt etwas, und Hardware reagiert (Servo, Licht, Ton)
 - **Bauen und Robotik:** ein Gerät mit Sensoren und Aktoren, ohne KI
+- **Spieleprogrammierung:** ein Spiel in Python (pygame-ce), ohne Hardware und ohne KI, das online im Browser läuft ([Team-Repo klonen](anleitungen/spiel-team-repo.md))
 
 ## Ordner
 
 ```
 etappen/       Anleitungen zu den vier Etappen des Einstiegs
-anleitungen/   Material mit GitHub und VS Code holen
+anleitungen/   Material mit GitHub und VS Code holen, Team-Repo für Spiele klonen
 arbeits-repo/  README und Abgleich für den Arbeitsordner schere-stein-papier-code
 microbit/      micro:bit-Programme (MicroPython) zu Etappe 1 und 2
 ki/            Browser-Seiten zu Etappe 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests

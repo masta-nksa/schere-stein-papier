@@ -106,5 +106,6 @@ Bevor du Neues holst, sicherst du deine Arbeit. Sonst weiss Git nicht, was mit d
 
 ## Später in der Projektphase
 Für dein eigenes Projekt legst du ein **eigenes Repo** auf GitHub an. Dann kannst du auch hochladen (**Push**) und im Team zusammenarbeiten. Das zeigen wir in der Projektphase.
+In der Richtung Spieleprogrammierung bekommt dein Team ein fertiges Repo: [Anleitung: Team-Repo für ein Spiel](spiel-team-repo.md).
 
 [Zurück zur Übersicht](../README.md)
