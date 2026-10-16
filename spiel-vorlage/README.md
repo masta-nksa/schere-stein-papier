@@ -42,6 +42,8 @@ python -m pygbag spiel
 
 Commit, dann Push. Unter **Actions** siehst du, wie das Spiel gebaut wird (etwa 1 Minute).
 Ein grüner Haken heisst: Die neue Version ist online. Ein rotes Kreuz: Klick darauf und lies die Fehlermeldung.
+Siehst du trotz grünem Haken noch die alte Version, hat der Browser sie zwischengespeichert (bis zu 10 Minuten):
+mit `Ctrl+Shift+R` neu laden oder die Seite in einem privaten Fenster öffnen.
 
 ## Aufbau
 

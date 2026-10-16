@@ -110,6 +110,6 @@ Im Browser dauert der erste Start einige Sekunden. Das ist normal.
 | `No module named pygame` | Die Pakete fehlen: `python -m pip install -r requirements.txt` |
 | „Hier ist das alte pygame installiert“ oder beim Start `pygame 2.6…` statt `pygame-ce` | Das alte pygame stört. Zuerst `python -m pip uninstall -y pygame pygame-ce`, dann `python -m pip install -r requirements.txt` |
 | Lokal läuft es, online nicht | Die Regeln für den Browser im `README.md` lesen (z. B. Töne nur als `.ogg`). In **Actions** die Fehlermeldung ansehen. |
-| Online nach dem Push noch die alte Version | 1 bis 2 Minuten warten, dann die Seite neu laden (`Ctrl+Shift+R`). |
+| Online nach dem Push noch die alte Version, obwohl **Actions** grün ist | Der Browser merkt sich die Seite bis zu 10 Minuten. Mit `Ctrl+Shift+R` (Mac: `Cmd+Shift+R`) neu laden, die Seite in einem privaten Fenster öffnen oder kurz warten. |
 
 [Zurück zu Etappe 3](../etappen/03-projektstart.md) · [Zurück zur Übersicht](../README.md)
