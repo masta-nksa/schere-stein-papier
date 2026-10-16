@@ -6,6 +6,7 @@ das alle drei Projektrichtungen berührt. Ab Lektion 3 wird projektartig gearbei
 > Hinweis: Dieses Dokument enthält bewusst **keine Schülernamen**, damit das Repo öffentlich bleiben kann.
 
 ## Warum Schere-Stein-Papier?
+
 | Richtung | Was sie darin wiederfindet |
 |---|---|
 | Spiele mit Gestensteuerung | Spielregeln, Zufall, Punkte, Multiplayer per Funk |

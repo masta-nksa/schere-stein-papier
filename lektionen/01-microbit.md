@@ -159,6 +159,7 @@ Beantworte für dich:
 - Nächste Woche ersetzen wir die Taste A durch eine Kamera mit KI. Was müsste sich im Programm ändern, was bleibt gleich?
 
 ## Wenn etwas nicht klappt
+
 | Problem | Lösung |
 |---|---|
 | „Send to micro:bit“ findet nichts | Chrome oder Edge? Kabel mit Datenleitung? Anderen USB-Anschluss probieren. |
