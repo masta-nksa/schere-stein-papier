@@ -1,4 +1,7 @@
-# Lektion 3: Projektstart
+---
+redirect_from: /lektionen/03-projektstart.html
+---
+# Etappe 3: Projektstart
 
 Jetzt wird es dein Projekt. Du arbeitest allein oder in einer Gruppe (**max. 3 Personen**).
 Du hast **10 Doppellektionen** Zeit. Bei Interesse kannst du danach weiterbauen.
@@ -15,7 +18,7 @@ Startpunkt: [Beispiel „Fang das Licht“](../beispiele/fang-das-licht/anleitun
 Wer lieber in Python arbeitet, darf das, es gibt dafür aber kein eigenes Material.
 
 ### KI bewegt etwas
-Eine KI im Browser erkennt etwas, und Hardware reagiert (wie in Lektion 2).
+Eine KI im Browser erkennt etwas, und Hardware reagiert (wie in Etappe 2).
 
 Beispielideen: Sortiermaschine (die Kamera erkennt einen Gegenstand, ein Servo sortiert) · gestengesteuerter Greifarm · Schranke, die bei einem Handzeichen öffnet
 
@@ -37,7 +40,7 @@ Jedes Projekt ist so aufgebaut. Du musst nicht alle Stufen schaffen.
 
 Etwa nach der Hälfte gibt es eine **Zwischenstand-Runde**: Alle zeigen kurz, was läuft. Danach entscheiden wir gemeinsam, wie es weitergeht.
 
-## Ablauf heute
+## Ablauf beim gemeinsamen Projektstart
 1. **Ideenmarkt:** Jede Person stellt eine Idee in 2 Minuten vor.
 2. **Gruppen bilden:** allein oder zu zweit oder zu dritt.
 3. **Projektplan:** Fülle die [Projektplan-Vorlage](../vorlagen/projektplan.md) aus. Das ist dein erster Milestone.

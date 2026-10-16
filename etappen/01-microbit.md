@@ -1,7 +1,10 @@
-# Lektion 1: micro:bit – Schere-Stein-Papier
+---
+redirect_from: /lektionen/01-microbit.html
+---
+# Etappe 1: micro:bit – Schere-Stein-Papier
 
 **Ziel:** Am Ende spielst du Schere-Stein-Papier gegen deinen micro:bit.
-Nächste Woche erkennt eine KI dein Handzeichen über die Kamera und schickt es an den micro:bit.
+In Etappe 2 erkennt dann eine KI dein Handzeichen über die Kamera und schickt es an den micro:bit.
 
 ## Die wichtigste Idee: Eingabe → Verarbeitung → Ausgabe
 Fast jedes Gerät funktioniert so, egal ob Spiel, Roboter oder Waschmaschine:
@@ -10,7 +13,7 @@ Fast jedes Gerät funktioniert so, egal ob Spiel, Roboter oder Waschmaschine:
 |---|---|---|
 | Taste, Sensor, Kamera | dein Programm entscheidet | Display, Ton, Motor, Licht |
 
-Achte heute bei jedem Schritt darauf: Was ist die Eingabe, was die Ausgabe?
+Achte bei jedem Schritt darauf: Was ist die Eingabe, was die Ausgabe?
 
 ## Vorbereitung
 1. Öffne [python.microbit.org](https://python.microbit.org) in **Chrome oder Edge**.
@@ -154,9 +157,9 @@ Funk kann Nachrichten verlieren. Darum wird jede Wahl mehrmals gefunkt, und jede
 
 ## Rückblick
 Beantworte für dich:
-- Was waren heute die **Eingaben**? Was die **Ausgaben**?
+- Was waren in dieser Etappe die **Eingaben**? Was die **Ausgaben**?
 - Wo steckt in deinem Spiel die **Verarbeitung**, also die Entscheidung?
-- Nächste Woche ersetzen wir die Taste A durch eine Kamera mit KI. Was müsste sich im Programm ändern, was bleibt gleich?
+- In Etappe 2 ersetzen wir die Taste A durch eine Kamera mit KI. Was müsste sich im Programm ändern, was bleibt gleich?
 
 ## Wenn etwas nicht klappt
 
@@ -168,4 +171,4 @@ Beantworte für dich:
 | Funk geht nicht | Beide dieselbe `GRUPPE`? Beide das Programm neu geladen? |
 | Turnier: alle warten ewig | Hat jeder eine **andere** `SPIELER`-Nummer (1, 2, 3)? Alle dieselbe `GRUPPE`? Alle drei haben Taste B gedrückt? Nach 15 Sekunden gibt der micro:bit auf (trauriges Gesicht). |
 
-[Weiter zu Lektion 2: KI im Browser](02-ki.md)
+[Weiter zu Etappe 2: KI im Browser](02-ki.md)

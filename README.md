@@ -1,12 +1,12 @@
 # Freifach Informatik: Projekte mit KI und Hardware
 
 Willkommen! In den nächsten Wochen baust du dein eigenes Projekt.
-Zuerst machen wir **drei Lektionen gemeinsam**, danach arbeitest du allein oder im Team (max. 3 Personen) an deiner Idee.
+Zum Einstieg gehst du **vier Etappen** durch, in deinem **eigenen Tempo**: Bist du mit einer Etappe fertig, gehst du einfach zur nächsten weiter. Danach arbeitest du allein oder im Team (max. 3 Personen) an deiner Idee.
 
-Du kannst diese Seite auch zum Selbststudium nutzen. Jede Lektion hat lauffähigen Code und „Funktioniert es?“-Checks.
+Du kannst diese Seite auch zum Selbststudium nutzen. Jede Etappe hat lauffähigen Code und „Funktioniert es?“-Checks.
 
 ## So arbeitest du mit dem Material
-1. **Lesen:** Die Lektionen findest du unten. Du kannst sie hier im Browser lesen.
+1. **Lesen:** Die Etappen findest du unten. Du kannst sie hier im Browser lesen.
 2. **Auf den Laptop holen:** Für die Vorlagen brauchst du alle Dateien in VS Code.
    Klone dazu deinen **Arbeitsordner** [schere-stein-papier-code](https://github.com/masta-nksa/schere-stein-papier-code) mit VS Code. So kannst du später mit einem Klick Neues nachholen: **[Anleitung: Material mit GitHub und VS Code holen](anleitungen/github-vscode.md)**.
    Die Seiten in `ki/` öffnest du dort mit **Live Server**.
@@ -16,14 +16,14 @@ Du kannst diese Seite auch zum Selbststudium nutzen. Jede Lektion hat lauffähig
 
 Auf GitHub: [Arbeitsordner zum Klonen](https://github.com/masta-nksa/schere-stein-papier-code) · [ganzes Material mit Website](https://github.com/masta-nksa/schere-stein-papier)
 
-## Der gemeinsame Einstieg: Schere-Stein-Papier
+## Der Einstieg: Schere-Stein-Papier in vier Etappen
 
-| Lektion | Thema | Was du lernst |
+| Etappe | Thema | Was du lernst |
 |---|---|---|
-| [0](lektionen/00-setup.md) | Setup | micro:bit-Editor, Browser, GitHub Student Pack |
-| [1](lektionen/01-microbit.md) | micro:bit | Eingabe → Verarbeitung → Ausgabe, Sensoren, Zufall, Funk |
-| [2](lektionen/02-ki.md) | KI im Browser | Ein KI-Modell erkennt dein Handzeichen und spielt mit dem micro:bit |
-| [3](lektionen/03-projektstart.md) | Projektstart | Idee, Team, Projektplan |
+| [0](etappen/00-setup.md) | Setup | micro:bit-Editor, Browser, GitHub Student Pack |
+| [1](etappen/01-microbit.md) | micro:bit | Eingabe → Verarbeitung → Ausgabe, Sensoren, Zufall, Funk |
+| [2](etappen/02-ki.md) | KI im Browser | Ein KI-Modell erkennt dein Handzeichen und spielt mit dem micro:bit |
+| [3](etappen/03-projektstart.md) | Projektstart | Idee, Team, Projektplan |
 
 ## Danach: drei Richtungen für dein Projekt
 - **Spiele mit Gestensteuerung:** ein Spiel, das du mit Kamera und KI steuerst
@@ -33,14 +33,14 @@ Auf GitHub: [Arbeitsordner zum Klonen](https://github.com/masta-nksa/schere-stei
 ## Ordner
 
 ```
-lektionen/     Anleitungen zu den drei Einstiegslektionen
+etappen/       Anleitungen zu den vier Etappen des Einstiegs
 anleitungen/   Material mit GitHub und VS Code holen
 arbeits-repo/  README und Abgleich für den Arbeitsordner schere-stein-papier-code
-microbit/      micro:bit-Programme (MicroPython) zu Lektion 1 und 2
-ki/            Browser-Seiten zu Lektion 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests
+microbit/      micro:bit-Programme (MicroPython) zu Etappe 1 und 2
+ki/            Browser-Seiten zu Etappe 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests
 vorlagen/      Projektplan und Milestones
 beispiele/     Beispielprojekte zum Weiterbauen, z. B. "Fang das Licht"
-lehrperson/    Ablauf der Einstiegslektionen
+lehrperson/    Richtplan und Vorbereitung für die Lehrperson
 ```
 
 ## Hardware

@@ -1,6 +1,6 @@
 # Das Material mit GitHub und VS Code holen
 
-Deine Arbeitsdateien (Vorlagen, Programme, Lösungen, Beispiele) liegen in einem eigenen Repo auf GitHub. Du holst es einmal auf deinen Laptop und arbeitest dann direkt in **VS Code**. Die Anleitungen zu den Lektionen liest du auf der [Website](https://masta-nksa.github.io/schere-stein-papier/).
+Deine Arbeitsdateien (Vorlagen, Programme, Lösungen, Beispiele) liegen in einem eigenen Repo auf GitHub. Du holst es einmal auf deinen Laptop und arbeitest dann direkt in **VS Code**. Die Anleitungen zu den Etappen liest du auf der [Website](https://masta-nksa.github.io/schere-stein-papier/).
 Wenn es neue Aufgaben oder Korrekturen gibt, holst du sie mit einem Klick nach.
 
 Das Repo zum Klonen: [github.com/masta-nksa/schere-stein-papier-code](https://github.com/masta-nksa/schere-stein-papier-code)
@@ -68,8 +68,8 @@ Das bleibt nur auf deinem Laptop. Du lädst nichts zu GitHub hoch.
 
 ## Arbeiten
 
-- **Lektionen lesen:** auf der [Website](https://masta-nksa.github.io/schere-stein-papier/). Dort steht bei jedem Schritt, welche Datei du brauchst.
-- **Browser-Seiten (Lektion 2):** Du brauchst die Erweiterung **Live Server**. VS Code schlägt sie beim ersten Öffnen unten rechts vor: **Installieren**. Sonst links auf **Erweiterungen**, nach „Live Server“ suchen und installieren. Dann Rechtsklick auf `index.html` → **Open with Live Server**.
+- **Etappen lesen:** auf der [Website](https://masta-nksa.github.io/schere-stein-papier/). Dort steht bei jedem Schritt, welche Datei du brauchst.
+- **Browser-Seiten (Etappe 2):** Du brauchst die Erweiterung **Live Server**. VS Code schlägt sie beim ersten Öffnen unten rechts vor: **Installieren**. Sonst links auf **Erweiterungen**, nach „Live Server“ suchen und installieren. Dann Rechtsklick auf `index.html` → **Open with Live Server**.
 - **Vorlagen bearbeiten:** Du arbeitest direkt in den Dateien, z. B. `ki/01-erkennen/runde.js`. Speichern mit `Ctrl+S`.
 - **micro:bit-Programme:** Die `.py`-Datei in VS Code öffnen, alles kopieren und in [python.microbit.org](https://python.microbit.org) einfügen. Dort auf den micro:bit laden.
 - **Lösungen:** Liegen gleich daneben, z. B. `ki/01-erkennen/loesung/runde.js` und `microbit/06_ssp_ki.py`. Erst nach einem eigenen Versuch anschauen.

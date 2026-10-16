@@ -713,7 +713,7 @@ def test_duell_funkverlust():
     pruefe(zahlen["gemischt"] <= 1, "07 Verlust: zu viele einseitige Runden: %s" % zahlen)
 
 
-# ---------- Lektion 1: Reaktionsspiel und Turnier ----------
+# ---------- Etappe 1: Reaktionsspiel und Turnier ----------
 
 def test_reaktion():
     print("08: Reaktionsspiel")

@@ -1,8 +1,11 @@
-# Lektion 0: Setup
+---
+redirect_from: /lektionen/00-setup.html
+---
+# Etappe 0: Setup
 
 Du arbeitest mit deinem eigenen Gerät. Das brauchst du:
 
-## Für Lektion 1 (micro:bit)
+## Für Etappe 1 (micro:bit)
 - **Chrome oder Edge** (Windows, Mac, Linux oder Chromebook; iPad und Handy gehen nicht)
 - Den **micro:bit-Python-Editor**: [python.microbit.org](https://python.microbit.org). Er läuft im Browser, du musst nichts installieren.
 - Ein **USB-Kabel mit Datenleitung** (ein reines Ladekabel geht nicht)
@@ -14,7 +17,7 @@ So testest du es:
 
 Geht „Send to micro:bit“ nicht, drücke **Save** und ziehe die `.hex`-Datei auf das Laufwerk **MICROBIT**.
 
-## Für Lektion 2 (KI im Browser)
+## Für Etappe 2 (KI im Browser)
 - **VS Code** mit der Erweiterung **Live Server**. Damit öffnest du Webseiten über `localhost`. Die Kamera funktioniert nur so (oder über `https`), nicht über eine direkt geöffnete Datei.
 - Eine **Webcam** (die eingebaute reicht)
 - **Git** und das Material als geklontes Repo in VS Code: [Anleitung: Material mit GitHub und VS Code holen](../anleitungen/github-vscode.md)
@@ -27,7 +30,7 @@ Mit dem Pack bekommst du **GitHub Copilot Student** (KI-Hilfe in VS Code). Die V
 3. Warten, bis die Bestätigung kommt. Der Zugang zu Copilot kann zeitweise eingeschränkt sein.
 
 ## Regeln für KI-Hilfe
-- Im **Einstieg** (Lektion 1 bis 3): Lass dir Fehler erklären, schreibe den Code aber selbst.
+- Im **Einstieg** (Etappe 1 bis 3): Lass dir Fehler erklären, schreibe den Code aber selbst.
 - In der **Projektphase**: Du darfst Copilot und andere KI-Tools frei nutzen.
 - **Immer:** Übernimmst du Code von einer KI, musst du ihn erklären können.
 

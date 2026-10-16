@@ -7,3 +7,5 @@ theme: jekyll-theme-primer
 exclude:
   - ki/test/ausgabe-microbit.txt
   - arbeits-repo/
+plugins:
+  - jekyll-redirect-from

@@ -1,7 +1,12 @@
 # Einstieg: 3 × 90 Minuten (Lehrperson)
 
-Drei gemeinsame Lektionen mit Input durch die Lehrperson. Alle bauen dasselbe Mini-Projekt (Schere-Stein-Papier),
-das alle drei Projektrichtungen berührt. Ab Lektion 3 wird projektartig gearbeitet.
+Der Einstieg besteht aus vier **Etappen**: 0 Setup, 1 micro:bit, 2 KI im Browser, 3 Projektstart. Alle bauen dasselbe
+Mini-Projekt (Schere-Stein-Papier), das alle drei Projektrichtungen berührt. Ab Etappe 3 wird projektartig gearbeitet.
+
+Die SuS gehen die Etappen **in ihrem eigenen Tempo**: Wer fertig ist, geht zur nächsten Etappe weiter. Die Zeitpläne
+unten sind ein **Richtplan** für drei Doppellektionen. Die kurzen Inputs (z. B. `ergebnis()` an der Tafel, das Protokoll)
+bleiben gemeinsam: Wer schon weiter ist, hört kurz zu.
+Etappe 3 (Ideenmarkt, Gruppen bilden) findet gemeinsam statt. Schnelle können vorher schon ihre Idee vorbereiten.
 
 > Hinweis: Dieses Dokument enthält bewusst **keine Schülernamen**, damit das Repo öffentlich bleiben kann.
 
@@ -11,11 +16,11 @@ das alle drei Projektrichtungen berührt. Ab Lektion 3 wird projektartig gearbei
 |---|---|
 | Spiele mit Gestensteuerung | Spielregeln, Zufall, Punkte, Multiplayer per Funk |
 | KI bewegt etwas | Kamera erkennt ein Handzeichen, Hardware reagiert |
-| Bauen und Robotik | Lektion 1 ist reine Hardware: Sensoren, Ausgaben, Funk |
+| Bauen und Robotik | Etappe 1 ist reine Hardware: Sensoren, Ausgaben, Funk |
 
 Drei klar unterscheidbare Handzeichen sind zudem ideal für Teachable Machine.
 
-## Lektion 1: micro:bit (Eingabe → Verarbeitung → Ausgabe)
+## Doppellektion 1: Etappe 1 micro:bit (Eingabe → Verarbeitung → Ausgabe)
 
 | Min. | Inhalt |
 |---|---|
@@ -28,7 +33,7 @@ Drei klar unterscheidbare Handzeichen sind zudem ideal für Teachable Machine.
 
 **Nur eingebaute Bauteile** (Display, Tasten, Beschleunigungssensor, Lautsprecher, Funk). Es braucht keine Verdrahtung.
 
-## Lektion 2: KI im Browser
+## Doppellektion 2: Etappe 2 KI im Browser
 
 | Min. | Inhalt |
 |---|---|
@@ -41,7 +46,7 @@ Drei klar unterscheidbare Handzeichen sind zudem ideal für Teachable Machine.
 
 Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig haben. Wer nur bis Schritt 3 kommt, hat die Kernaufgabe geschafft. Wer es nicht schafft, nimmt die **Lösungsdateien** (`ki/01-erkennen/loesung/runde.js`, `microbit/06_ssp_ki.py`), damit er trotzdem ein laufendes Spiel hat. Das Duell kann sonst als Demo mit zwei Freiwilligen gezeigt werden.
 
-**Hardware in Lektion 2:** Display, Tasten, Lautsprecher (V2) und Schütteln (Beschleunigungssensor) gehören zu den Grundaufgaben, dazu USB und Funk. Zusatz ★: Neopixel-Ampel an Pin 1 (Streifen mit höchstens 8 Pixeln, am 3V-Anschluss des micro:bit, keine Batterie nötig). Ein Servo ist bewusst nicht eingeplant: Er braucht 5 V und ein Batteriepack und kommt erst in der Projektphase dazu.
+**Hardware in Etappe 2:** Display, Tasten, Lautsprecher (V2) und Schütteln (Beschleunigungssensor) gehören zu den Grundaufgaben, dazu USB und Funk. Zusatz ★: Neopixel-Ampel an Pin 1 (Streifen mit höchstens 8 Pixeln, am 3V-Anschluss des micro:bit, keine Batterie nötig). Ein Servo ist bewusst nicht eingeplant: Er braucht 5 V und ein Batteriepack und kommt erst in der Projektphase dazu.
 
 ★ für Schnelle: ml5 handPose statt Teachable Machine (nur Idee, kein eigener Code: Anleitung im Beispielprojekt „Fang das Licht“).
 
@@ -51,7 +56,7 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - Der Tab mit der Seite muss im Vordergrund bleiben, sonst pausiert die Erkennung.
 - Beim Duell braucht jedes Paar eine eigene `GRUPPE`.
 
-## Lektion 3: Projektstart
+## Doppellektion 3: Etappe 3 Projektstart (gemeinsam)
 
 | Min. | Inhalt |
 |---|---|
@@ -60,19 +65,20 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 | 40–50 | Gruppen bilden (max. 3 oder allein) |
 | 50–90 | Projektplan ausfüllen, Milestone 0 und 1 definieren, erste Arbeitsschritte |
 
-## Differenzierung in den gemeinsamen Lektionen
+## Differenzierung: eigenes Tempo
+- **Eigenes Tempo:** Wer eine Etappe fertig hat, geht zur nächsten weiter. Vor Etappe 2 braucht es Git, VS Code und den geklonten Arbeitsordner ([Anleitung](../anleitungen/github-vscode.md)).
 - **Grundaufgaben** mit „Funktioniert es?“-Checks: Wer wenig Vorkenntnisse hat, kommt Schritt für Schritt durch.
 - **Zusatzaufgaben ★** für die Schnellen, z. B. Funk zu zweit, Reaktionsspiel, Turnier zu dritt, Schummel-micro:bit, ml5 handPose.
 - Wer Hilfe braucht, bekommt sie von der Lehrperson. Die Schnellen arbeiten an den ★-Aufgaben weiter.
 
-## Vorbereitung vor Lektion 1
+## Vorbereitung vor der ersten Doppellektion
 - Ein micro:bit pro Person, USB-Kabel **mit Datenleitung**
 - Alle sieben Programme (`01` bis `05`, ★ `08_reaktion.py`, ★★ `09_ssp_turnier.py`) einmal auf einem micro:bit testen (Schritt 4 braucht einen V2 für den Ton)
 - Funk: Gruppennummern für die Paare vorbereiten, für das Turnier zusätzlich Dreiergruppen mit den `SPIELER`-Nummern 1, 2, 3
 - Den SuS vorab sagen: Laptop mit Chrome oder Edge mitbringen
 
-## Vorbereitung vor Lektion 2
-- Material für Lektion 2 liegt bereit: [Lektion 2](../lektionen/02-ki.md), Seiten in `ki/`, micro:bit-Programme `microbit/06_ssp_ki_vorlage.py` (für die SuS), `microbit/06_ssp_ki.py` (Lösung) und `microbit/07_ssp_duell.py`. Lösung der Seite: `ki/01-erkennen/loesung/runde.js`. Die Lösungsdateien erst nach einem eigenen Versuch herausgeben.
+## Vorbereitung vor der zweiten Doppellektion
+- Material für Etappe 2 liegt bereit: [Etappe 2](../etappen/02-ki.md), Seiten in `ki/`, micro:bit-Programme `microbit/06_ssp_ki_vorlage.py` (für die SuS), `microbit/06_ssp_ki.py` (Lösung) und `microbit/07_ssp_duell.py`. Lösung der Seite: `ki/01-erkennen/loesung/runde.js`. Die Lösungsdateien erst nach einem eigenen Versuch herausgeben.
 - **Neopixel-Streifen** für das Zusatz ★ bereitlegen: höchstens 8 Pixel, schon gelötet. Anschluss vorab selbst testen (Daten an Pin 1, 3V, GND) und die SuS den Anschluss einmal abnehmen lassen.
 - **Von Hand testen** (Kamera, USB und Funk konnten nur simuliert werden):
   - Schritt 2: Modell trainieren, Seite `ki/01-erkennen/` mit Live Server starten, alle Handzeichen und „nichts“ prüfen
@@ -85,7 +91,7 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - Kamera im Schul-WLAN prüfen, ebenso Zugriff auf `cdn.jsdelivr.net` (p5.js, TensorFlow.js, Teachable Machine) und auf den Modell-Link von Teachable Machine
 - Prüfen, ob Chrome oder Edge an der Schule **Web Serial** zulässt (kann per Richtlinie gesperrt sein)
 - Gruppennummern für die Paare vorbereiten (eine eigene Zahl pro Paar) und Plätze Rücken an Rücken einplanen
-- VS Code + Live Server + Git bei den SuS, Repo klonen: als Hausaufgabe nach Lektion 1 ([Anleitung](../anleitungen/github-vscode.md)). Zu Beginn von Lektion 2 kurz prüfen, wer es geschafft hat. Notlösung: ZIP-Download.
+- VS Code + Live Server + Git bei den SuS, Repo klonen: als Hausaufgabe nach der ersten Doppellektion ([Anleitung](../anleitungen/github-vscode.md)). Wer schon in der ersten Doppellektion zu Etappe 2 kommt, macht das zuerst. Zu Beginn der zweiten Doppellektion kurz prüfen, wer es geschafft hat. Notlösung: ZIP-Download.
 - Nach Änderungen an `ki/` oder `microbit/06–07` die Tests laufen lassen: `python ki/test/simuliere_microbit.py` und danach `node ki/test/test-logik.js`
 
 ## Veröffentlichung
@@ -93,7 +99,7 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - **Material-Repo** (hier wird alles geändert): [github.com/masta-nksa/schere-stein-papier](https://github.com/masta-nksa/schere-stein-papier), Branch `main`
 - **Arbeits-Repo** für die SuS (zum Klonen): [github.com/masta-nksa/schere-stein-papier-code](https://github.com/masta-nksa/schere-stein-papier-code). Es enthält nur `ki/` (ohne Tests), `microbit/`, `beispiele/`, `vorlagen/`, ein eigenes README (`arbeits-repo/README.md`) und die Empfehlung für Live Server.
 - **Abgleich:** Die GitHub-Action `.github/workflows/arbeits-repo.yml` überträgt diese Ordner bei jedem Push mit einem normalen Commit ins Arbeits-Repo. Sie schreibt mit einem Deploy-Key (Secret `ARBEITS_REPO_KEY`), der nur auf das Arbeits-Repo Zugriff hat. Status: im Material-Repo unter *Actions*. Von Hand starten: *Actions → Arbeits-Repo abgleichen → Run workflow*. **Nie direkt im Arbeits-Repo ändern**, sonst wird es beim nächsten Abgleich überschrieben.
-- Die SuS klonen das Repo mit VS Code ([Anleitung](../anleitungen/github-vscode.md)) und arbeiten lokal mit Live Server. Neues holen sie mit Commit und Pull. Wenn du später eine Vorlage änderst, an der die SuS schon arbeiten, kann es beim Pull Konflikte geben. Ändere Vorlagen deshalb möglichst vor der Lektion, oder lege neue Dateien an. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
+- Die SuS klonen das Repo mit VS Code ([Anleitung](../anleitungen/github-vscode.md)) und arbeiten lokal mit Live Server. Neues holen sie mit Commit und Pull. Wenn du später eine Vorlage änderst, an der die SuS schon arbeiten, kann es beim Pull Konflikte geben. Ändere Vorlagen deshalb möglichst früh, bevor die ersten SuS daran arbeiten, oder lege neue Dateien an. Die Seite `ki/02-microbit/` geht auch direkt online, weil Pages `https` nutzt (Kamera und Web Serial funktionieren).
 - Lösungen sind bewusst sichtbar (`loesung/`, `microbit/06_ssp_ki.py`).
 - Änderungen veröffentlichen: committen und `git push`. Nach ein bis zwei Minuten ist die Website aktuell. In Markdown keine doppelten geschweiften Klammern und keine geschweifte Klammer mit Prozentzeichen verwenden (Liquid-Syntax von Jekyll), sonst bricht der Pages-Build.
 
