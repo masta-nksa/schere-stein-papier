@@ -52,6 +52,7 @@ python spiel/main.py
 
 **Funktioniert es?**
 
+- [ ] Im Terminal steht beim Start `pygame-ce` und eine Versionsnummer (nicht nur `pygame`).
 - [ ] Ein Fenster mit «Sternenfänger» geht auf. Mit Leertaste oder Klick startet das Spiel.
 - [ ] Links im Explorer siehst du den Ordner `spiel` und die Datei `README.md`.
 
@@ -106,6 +107,7 @@ Im Browser dauert der erste Start einige Sekunden. Das ist normal.
 | Pull: Meldung zu **Konflikt** (*Merge Conflict*) | Zwei Personen haben dieselbe Stelle geändert. VS Code zeigt beide Versionen. Gemeinsam entscheiden, was bleibt, speichern, Commit. Bei Unsicherheit die Lehrperson fragen. |
 | Push: „GH007“ oder „private email“ | In GitHub unter **Settings → Emails** die Option *Block command line pushes that expose my email* ausschalten, oder die Lehrperson fragen. |
 | `No module named pygame` | Die Pakete fehlen: `python -m pip install -r requirements.txt` |
+| „Hier ist das alte pygame installiert“ oder beim Start `pygame 2.6…` statt `pygame-ce` | Das alte pygame stört. Zuerst `python -m pip uninstall -y pygame pygame-ce`, dann `python -m pip install -r requirements.txt` |
 | Lokal läuft es, online nicht | Die Regeln für den Browser im `README.md` lesen (z. B. Töne nur als `.ogg`). In **Actions** die Fehlermeldung ansehen. |
 | Online nach dem Push noch die alte Version | 1 bis 2 Minuten warten, dann die Seite neu laden (`Ctrl+Shift+R`). |
 
