@@ -40,6 +40,7 @@ microbit/      micro:bit-Programme (MicroPython) zu Etappe 1 und 2
 ki/            Browser-Seiten zu Etappe 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests
 vorlagen/      Projektplan und Milestones
 beispiele/     Beispielprojekte zum Weiterbauen, z. B. "Fang das Licht"
+spiel-vorlage/ Vorlage für Spiele mit Python (pygame-ce) im Browser, Kopie des Repos spiel-vorlage
 lehrperson/    Richtplan und Vorbereitung für die Lehrperson
 ```
 

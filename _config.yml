@@ -7,5 +7,6 @@ theme: jekyll-theme-primer
 exclude:
   - ki/test/ausgabe-microbit.txt
   - arbeits-repo/
+  - spiel-vorlage/
 plugins:
   - jekyll-redirect-from
