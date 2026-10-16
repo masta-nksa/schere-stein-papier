@@ -29,7 +29,7 @@ Auf GitHub: [Arbeitsordner zum Klonen](https://github.com/masta-nksa/schere-stei
 - **Spiele mit Gestensteuerung:** ein Spiel, das du mit Kamera und KI steuerst
 - **KI bewegt etwas:** eine KI erkennt etwas, und Hardware reagiert (Servo, Licht, Ton)
 - **Bauen und Robotik:** ein Gerät mit Sensoren und Aktoren, ohne KI
-- **Spieleprogrammierung:** ein Spiel in Python (pygame-ce), ohne Hardware und ohne KI, das online im Browser läuft ([Team-Repo klonen](anleitungen/spiel-team-repo.md))
+- **Spieleprogrammierung:** ein Spiel in Python (pygame-ce), ohne Hardware und ohne KI, das online im Browser läuft ([Tutorial](beispiele/sternenfaenger/README.md) · [Team-Repo klonen](anleitungen/spiel-team-repo.md))
 
 ## Ordner
 
@@ -40,7 +40,7 @@ arbeits-repo/  README und Abgleich für den Arbeitsordner schere-stein-papier-co
 microbit/      micro:bit-Programme (MicroPython) zu Etappe 1 und 2
 ki/            Browser-Seiten zu Etappe 2 (Handzeichen erkennen, Spiel, micro:bit per USB), mit Tests
 vorlagen/      Projektplan und Milestones
-beispiele/     Beispielprojekte zum Weiterbauen, z. B. "Fang das Licht"
+beispiele/     Beispielprojekte zum Weiterbauen: "Fang das Licht", Tutorial "Sternenfänger" (Spiel mit Python)
 spiel-vorlage/ Vorlage für Spiele mit Python (pygame-ce) im Browser, Kopie des Repos spiel-vorlage
 lehrperson/    Richtplan und Vorbereitung für die Lehrperson
 ```

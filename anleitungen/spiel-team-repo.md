@@ -57,6 +57,7 @@ python spiel/main.py
 - [ ] Links im Explorer siehst du den Ordner `spiel` und die Datei `README.md`.
 
 Im `README.md` steht, wie das Spiel aufgebaut ist und was ihr zuerst ausbauen könnt.
+Wie man so ein Spiel Schritt für Schritt aufbaut, zeigt das [Tutorial: Ein Spiel mit Python entwickeln](../beispiele/sternenfaenger/README.md).
 
 ---
 

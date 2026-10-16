@@ -85,5 +85,7 @@ Ein grüner Haken heisst: Die neue Version ist online. Ein rotes Kreuz: Klick da
 - [ ] «Juice»: Der Bildschirm wackelt kurz bei einem Stein, Funken beim Stern (Partikel)
 - [ ] Dann: dein eigenes Spiel. Die Szenen und die Spielschleife kannst du behalten.
 
+Wie das Spiel Schritt für Schritt entsteht: [Tutorial: Ein Spiel mit Python entwickeln](https://masta-nksa.github.io/schere-stein-papier/beispiele/sternenfaenger/).
+
 Zum Weiterlesen: [Game Programming Patterns](https://gameprogrammingpatterns.com/) von Robert Nystrom
 (frei online, unter anderem zu Spielschleife, Zustand und Komponenten).
