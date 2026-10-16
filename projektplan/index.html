@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projektplan – Freifach Informatik</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+  <style>
+    :root { --rand: #d0d7de; --text: #1f2328; --leise: #59636e; --blau: #0969da; --gruen: #1a7f37; --gelb: #fff8c5; --rot: #cf222e; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; color: var(--text); background: #f6f8fa; line-height: 1.45; }
+    main { max-width: 920px; margin: 0 auto; padding: 16px; }
+    h1 { font-size: 1.6rem; margin: 8px 0 4px; }
+    h2 { font-size: 1.15rem; margin: 0 0 10px; }
+    a { color: var(--blau); }
+    .leiste { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid var(--rand);
+              padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .leiste .name { font-weight: 600; margin-right: 8px; }
+    .leiste .status { color: var(--leise); font-size: 0.9rem; margin-right: auto; }
+    .leiste .status.warnung { color: var(--rot); font-weight: 600; }
+    button { font: inherit; padding: 6px 12px; border: 1px solid var(--rand); border-radius: 6px; background: #f6f8fa; cursor: pointer; }
+    button:hover { background: #eef1f4; }
+    button.haupt { background: var(--gruen); border-color: var(--gruen); color: #fff; }
+    button.haupt:hover { background: #116329; }
+    button.klein { padding: 2px 8px; font-size: 0.9rem; }
+    button.weg { border: none; background: none; color: var(--leise); font-size: 1.1rem; padding: 2px 6px; }
+    button.weg:hover { color: var(--rot); }
+    section { background: #fff; border: 1px solid var(--rand); border-radius: 8px; padding: 14px 16px; margin: 14px 0; }
+    label { display: block; font-weight: 600; margin: 10px 0 2px; }
+    label .hilfe, .hilfe { font-weight: 400; color: var(--leise); font-size: 0.9rem; }
+    input[type=text], input[type=date], select, textarea { width: 100%; font: inherit; padding: 6px 8px; border: 1px solid var(--rand); border-radius: 6px; background: #fff; }
+    textarea { min-height: 3.2em; resize: vertical; overflow: hidden; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--blau); outline-offset: -1px; }
+    .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+    .zeile { display: grid; gap: 6px; align-items: start; padding: 6px 0; border-bottom: 1px solid #eaeef2; }
+    .zeile:last-child { border-bottom: none; }
+    .zeile.ms { grid-template-columns: 1fr 9em 10em 4.5em 2em; }
+    .zeile.risiko { grid-template-columns: 1fr 1fr 2em; }
+    .kopf { font-size: 0.85rem; color: var(--leise); font-weight: 600; border-bottom: 1px solid var(--rand); }
+    .zeile .haken { display: flex; align-items: center; justify-content: center; height: 2.2em; }
+    .zeile .haken input { width: 1.2em; height: 1.2em; }
+    .zeile.ms.fertig input[type=text] { text-decoration: line-through; color: var(--leise); }
+    .austausch { border: 1px solid var(--rand); border-radius: 8px; padding: 10px 12px; margin: 10px 0; background: #fbfcfd; }
+    .austausch .titel { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .austausch .titel input { width: 11em; }
+    .info { background: #ddf4ff; border: 1px solid #54aeff66; border-radius: 8px; padding: 10px 14px; }
+    .geteilt { background: var(--gelb); border: 1px solid #d4a72c66; border-radius: 8px; padding: 10px 14px; }
+    .termine { margin: 6px 0 0; padding-left: 1.2em; }
+    .termine li.naechster { font-weight: 700; }
+    .linkfeld { margin-top: 8px; }
+    .linkfeld textarea { font-family: ui-monospace, Consolas, monospace; font-size: 0.8rem; min-height: 4em; overflow: auto; }
+    .ki { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+    .ki input { width: 1.2em; height: 1.2em; margin-top: 0.15em; }
+    [hidden] { display: none !important; }
+    body.nurlesen .nur-bearbeiten { display: none !important; }
+    @media (max-width: 640px) {
+      .leiste { position: static; }
+      .zwei { grid-template-columns: 1fr; }
+      .zeile.ms { grid-template-columns: 1fr 1fr 2.5em 2em; }
+      .zeile.ms > :first-child { grid-column: 1 / -1; }
+      .kopf { display: none; }
+      .zeile.risiko { grid-template-columns: 1fr 2em; }
+      .zeile.risiko > :nth-child(2) { grid-column: 1; }
+    }
+    @media print {
+      body { background: #fff; }
+      .leiste, .nur-bearbeiten, .info, .geteilt, .linkfeld, button { display: none !important; }
+      section { border: none; padding: 0; margin: 12px 0; break-inside: avoid-page; }
+      input, select, textarea { border: none; border-bottom: 1px solid #ccc; border-radius: 0; padding: 2px 0; }
+      textarea { resize: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="leiste">
+    <span class="name">🗺️ Projektplan</span>
+    <span id="status" class="status">…</span>
+    <button id="teilen" class="haupt nur-bearbeiten" type="button">Link zum Teilen</button>
+    <button id="sichern" type="button">Als Datei sichern</button>
+    <button id="laden" class="nur-bearbeiten" type="button">Datei laden</button>
+    <button id="drucken" type="button">Drucken / PDF</button>
+    <input id="datei" type="file" accept=".json,application/json" hidden>
+  </div>
+
+  <main>
+    <h1 id="ueberschrift">Projektplan</h1>
+
+    <div id="geteilt-hinweis" class="geteilt" hidden>
+      <strong>Du siehst einen geteilten Plan</strong> <span id="geteilt-stand"></span>.
+      Ändern kannst du ihn hier nicht.
+      <div style="margin-top: 8px">
+        <button id="uebernehmen" type="button">In meinen Browser übernehmen</button>
+        <button id="eigener" type="button">Zu meinem eigenen Plan</button>
+      </div>
+    </div>
+
+    <div class="info nur-bearbeiten">
+      Fülle den Plan zu Beginn des Projekts aus und halte ihn aktuell. Er wird <strong>nur in diesem Browser</strong> gespeichert,
+      bei jeder Änderung automatisch.
+      <ul style="margin: 6px 0 0; padding-left: 1.2em">
+        <li><strong>Teilen:</strong> «Link zum Teilen» erzeugt einen Link, der den ganzen Plan enthält. Schicke ihn der Lehrperson
+          (und deinem Team): beim Projektstart und vor jedem Austausch.</li>
+        <li><strong>Sichern:</strong> Löscht jemand die Browserdaten, ist der Plan weg. Sichere ihn deshalb ab und zu als Datei.</li>
+        <li><strong>Im Team</strong> führt eine Person den Plan. Die anderen öffnen ihren Link.</li>
+        <li>Nur <strong>Vornamen</strong> eintragen, keine weiteren persönlichen Angaben.</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>1. Projekt</h2>
+      <label for="f-titel">Titel</label>
+      <input id="f-titel" type="text" data-feld="titel" placeholder="z. B. Sternenfänger 2: Die Rückkehr">
+      <div class="zwei">
+        <div>
+          <label for="f-team">Team <span class="hilfe">(Vornamen, max. 3)</span></label>
+          <input id="f-team" type="text" data-feld="team" placeholder="z. B. Mia, Noah">
+        </div>
+        <div>
+          <label for="f-richtung">Richtung</label>
+          <select id="f-richtung" data-feld="richtung">
+            <option value="">– bitte wählen –</option>
+            <option>Spiele mit Gestensteuerung</option>
+            <option>KI bewegt etwas</option>
+            <option>Bauen und Robotik</option>
+            <option>Spieleprogrammierung</option>
+            <option>Eigenes Projekt</option>
+          </select>
+        </div>
+      </div>
+      <label for="f-idee">Idee in einem Satz</label>
+      <input id="f-idee" type="text" data-feld="idee" placeholder="z. B. Ein Jump'n'Run, das man mit Handbewegungen steuert.">
+      <label for="f-beschreibung">Beschreibung <span class="hilfe">Was soll entstehen? Für wen? Was ist das Besondere daran?</span></label>
+      <textarea id="f-beschreibung" data-feld="beschreibung"></textarea>
+      <label for="f-material">Was brauchst du? <span class="hilfe">Software, Hardware, Bauteile, Hilfe von jemandem</span></label>
+      <textarea id="f-material" data-feld="material"></textarea>
+    </section>
+
+    <section>
+      <h2>2. Ziele in drei Stufen</h2>
+      <label for="f-basis">Stufe 1: Basis <span class="hilfe">(verbindlich) Was läuft am Ende sicher? So konkret, dass man es vorführen kann.</span></label>
+      <textarea id="f-basis" data-feld="basis" placeholder="z. B. Das Spiel läuft im Browser, der Spieler springt mit einer Geste, es gibt Punkte und Game Over."></textarea>
+      <label for="f-erweiterung">Stufe 2: Erweiterung <span class="hilfe">(wenn die Zeit reicht)</span></label>
+      <textarea id="f-erweiterung" data-feld="erweiterung"></textarea>
+      <label for="f-vertiefung">Stufe 3: Vertiefung <span class="hilfe">(nur bei Lust und Zeit)</span></label>
+      <textarea id="f-vertiefung" data-feld="vertiefung"></textarea>
+    </section>
+
+    <section>
+      <h2>3. Milestones</h2>
+      <p class="hilfe" style="margin-top: 0">Ein Milestone ist ein Zwischenziel, das <strong>fertig und vorzeigbar</strong> ist.
+        Lieber kleine Schritte mit Datum als ein grosser am Schluss.</p>
+      <div class="zeile ms kopf"><span>Was ist fertig?</span><span>Wer</span><span>Bis</span><span>Erledigt</span><span></span></div>
+      <div id="liste-milestones"></div>
+      <button class="klein nur-bearbeiten" type="button" data-neu="milestones">+ Milestone</button>
+    </section>
+
+    <section>
+      <h2>4. Risiken</h2>
+      <p class="hilfe" style="margin-top: 0">Was könnte schiefgehen, und was machst du dann?</p>
+      <div class="zeile risiko kopf"><span>Risiko</span><span>Plan B</span><span></span></div>
+      <div id="liste-risiken"></div>
+      <button class="klein nur-bearbeiten" type="button" data-neu="risiken">+ Risiko</button>
+    </section>
+
+    <section>
+      <h2>5. Austausch alle 4 Wochen</h2>
+      <p class="hilfe" style="margin-top: 0">Etwa alle vier Wochen zeigt ihr der Lehrperson, wo ihr steht. Füllt vorher einen Eintrag aus,
+        passt die Milestones an und schickt den <strong>Link zum Teilen</strong>.</p>
+      <div class="zwei">
+        <div>
+          <label for="f-start">Projektstart</label>
+          <input id="f-start" type="date" data-feld="start">
+        </div>
+        <div>
+          <label>Austausch-Termine <span class="hilfe">(ungefähr)</span></label>
+          <ul id="termine" class="termine"><li class="hilfe">Zuerst den Projektstart eintragen.</li></ul>
+        </div>
+      </div>
+      <div id="liste-austausch"></div>
+      <button class="klein nur-bearbeiten" type="button" data-neu="austausch">+ Neuer Austausch</button>
+    </section>
+
+    <section>
+      <h2>6. KI-Hilfe</h2>
+      <label class="ki"><input type="checkbox" data-feld="ki">
+        <span>Code, den ich von einer KI übernehme, kann ich erklären. Wenn nicht, frage ich nach oder lasse ihn weg.</span></label>
+    </section>
+
+    <section class="nur-bearbeiten">
+      <h2>Plan teilen und sichern</h2>
+      <button id="teilen2" class="haupt" type="button">Link zum Teilen erzeugen</button>
+      <button id="loeschen" type="button">Plan in diesem Browser löschen</button>
+      <div id="linkfeld" class="linkfeld" hidden>
+        <label for="link">Dein Link <span class="hilfe" id="link-hilfe"></span></label>
+        <textarea id="link" readonly></textarea>
+      </div>
+    </section>
+
+    <p class="hilfe">Freifach Informatik, Neue Kantonsschule Aarau · <a href="../etappen/03-projektstart.html">Zurück zum Projektstart</a></p>
+  </main>
+
+  <script>
+    'use strict';
+    var SCHLUESSEL = 'projektplan:v1';
+
+    var LISTEN = {
+      milestones: { klasse: 'zeile ms', felder: [
+        { name: 'was', typ: 'text', platz: 'Was ist fertig und vorzeigbar?' },
+        { name: 'wer', typ: 'text', platz: 'Wer' },
+        { name: 'bis', typ: 'date' },
+        { name: 'erledigt', typ: 'checkbox' }
+      ], leer: function () { return { was: '', wer: '', bis: '', erledigt: false }; } },
+      risiken: { klasse: 'zeile risiko', felder: [
+        { name: 'risiko', typ: 'textarea', platz: 'Was könnte schiefgehen?' },
+        { name: 'planb', typ: 'textarea', platz: 'Was mache ich dann?' }
+      ], leer: function () { return { risiko: '', planb: '' }; } },
+      austausch: { leer: function () { return { datum: heute(), laeuft: '', haengt: '', naechstes: '', hilfe: '' }; } }
+    };
+
+    var AUSTAUSCH_FELDER = [
+      { name: 'laeuft', titel: 'Was läuft schon?' },
+      { name: 'haengt', titel: 'Was klappt nicht oder dauert länger als geplant?' },
+      { name: 'naechstes', titel: 'Was ist bis zum nächsten Austausch dran? (Milestones angepasst?)' },
+      { name: 'hilfe', titel: 'Wobei brauchen wir Hilfe?' }
+    ];
+
+    function neuerPlan() {
+      return {
+        version: 1, geaendert: null,
+        titel: '', team: '', richtung: '', idee: '', beschreibung: '', material: '',
+        basis: '', erweiterung: '', vertiefung: '', start: '', ki: false,
+        milestones: [
+          { was: 'Projektplan ausgefüllt und mit der Lehrperson geteilt', wer: 'alle', bis: '', erledigt: false },
+          { was: 'Kleinste lauffähige Version (zum Beispiel nur die Steuerung)', wer: '', bis: '', erledigt: false },
+          { was: 'Basis läuft (Stufe 1)', wer: '', bis: '', erledigt: false },
+          { was: 'Erweiterung (Stufe 2)', wer: '', bis: '', erledigt: false },
+          { was: 'Aufräumen, testen, kurze Doku', wer: 'alle', bis: '', erledigt: false },
+          { was: 'Präsentation', wer: 'alle', bis: '', erledigt: false }
+        ],
+        risiken: [{ risiko: '', planb: '' }],
+        austausch: []
+      };
+    }
+
+    // Fehlende Felder ergänzen, unbekannte ignorieren (für Pläne aus Links, Dateien oder älteren Versionen)
+    function bereinigen(roh) {
+      var plan = neuerPlan();
+      if (!roh || typeof roh !== 'object') return plan;
+      Object.keys(plan).forEach(function (k) {
+        if (Array.isArray(plan[k])) {
+          if (Array.isArray(roh[k])) {
+            plan[k] = roh[k].filter(function (x) { return x && typeof x === 'object'; }).map(function (x) {
+              var leer = LISTEN[k].leer();
+              Object.keys(leer).forEach(function (f) {
+                if (typeof x[f] === typeof leer[f]) leer[f] = x[f];
+              });
+              return leer;
+            });
+          }
+        } else if (roh[k] !== undefined && (plan[k] === null || typeof roh[k] === typeof plan[k])) {
+          plan[k] = roh[k];
+        }
+      });
+      return plan;
+    }
+
+    function heute() {
+      var d = new Date();
+      return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    }
+
+    function datumText(iso, mitWochentag) {
+      if (!iso) return '';
+      var d = new Date(iso + 'T12:00:00');
+      if (isNaN(d)) return iso;
+      return d.toLocaleDateString('de-CH', mitWochentag
+        ? { weekday: 'short', day: 'numeric', month: 'numeric', year: 'numeric' }
+        : { day: 'numeric', month: 'numeric', year: 'numeric' });
+    }
+
+    // ---------- Speichern im Browser ----------
+    var speicherOk = true;
+    function ladenAusBrowser() {
+      try {
+        var text = localStorage.getItem(SCHLUESSEL);
+        return text ? bereinigen(JSON.parse(text)) : neuerPlan();
+      } catch (e) {
+        speicherOk = false;
+        return neuerPlan();
+      }
+    }
+
+    var speicherTimer = null;
+    function speichern() {
+      if (nurLesen) return;
+      plan.geaendert = new Date().toISOString();
+      clearTimeout(speicherTimer);
+      speicherTimer = setTimeout(function () {
+        try {
+          localStorage.setItem(SCHLUESSEL, JSON.stringify(plan));
+          speicherOk = true;
+        } catch (e) {
+          speicherOk = false;
+        }
+        statusZeigen();
+      }, 300);
+      verstecke('linkfeld');  // ein alter Link wäre jetzt veraltet
+    }
+
+    function statusZeigen() {
+      var el = document.getElementById('status');
+      el.classList.toggle('warnung', !speicherOk && !nurLesen);
+      if (nurLesen) {
+        el.textContent = 'Geteilter Plan (nur lesen)';
+      } else if (!speicherOk) {
+        el.textContent = 'Achtung: Dieser Browser speichert nicht. Sichere den Plan als Datei!';
+      } else if (plan.geaendert) {
+        var d = new Date(plan.geaendert);
+        el.textContent = 'Im Browser gespeichert, ' + d.toLocaleDateString('de-CH') + ' ' +
+          d.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit' });
+      } else {
+        el.textContent = 'Wird automatisch im Browser gespeichert';
+      }
+    }
+
+    // ---------- Anzeigen ----------
+    function autoHoehe(ta) {
+      if (!ta.clientWidth) return;  // noch nicht sichtbar: Höhe wäre falsch, später nochmals
+      ta.style.height = 'auto';
+      ta.style.height = (ta.scrollHeight + 2) + 'px';
+    }
+    function alleHoehen() { document.querySelectorAll('textarea').forEach(autoHoehe); }
+
+    function feldBauen(f, objekt, onAenderung) {
+      var el;
+      if (f.typ === 'textarea') {
+        el = document.createElement('textarea');
+      } else {
+        el = document.createElement('input');
+        el.type = f.typ;
+      }
+      if (f.platz) { el.placeholder = f.platz; el.setAttribute('aria-label', f.platz); }
+      if (f.typ === 'checkbox') {
+        el.checked = !!objekt[f.name];
+        el.setAttribute('aria-label', 'Erledigt');
+      } else {
+        el.value = objekt[f.name] || '';
+      }
+      el.disabled = nurLesen;
+      el.addEventListener(f.typ === 'checkbox' || f.typ === 'date' ? 'change' : 'input', function () {
+        objekt[f.name] = f.typ === 'checkbox' ? el.checked : el.value;
+        if (f.typ === 'textarea') autoHoehe(el);
+        onAenderung();
+        speichern();
+      });
+      if (f.typ === 'checkbox') {
+        var huelle = document.createElement('span');
+        huelle.className = 'haken';
+        huelle.appendChild(el);
+        return huelle;
+      }
+      return el;
+    }
+
+    function wegKnopf(text, beimKlick) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'weg nur-bearbeiten';
+      b.textContent = '✕';
+      b.title = text;
+      b.setAttribute('aria-label', text);
+      b.addEventListener('click', beimKlick);
+      return b;
+    }
+
+    function listeZeigen(name) {
+      var box = document.getElementById('liste-' + name);
+      box.textContent = '';
+      var def = LISTEN[name];
+      plan[name].forEach(function (eintrag, i) {
+        if (name === 'austausch') { box.appendChild(austauschKarte(eintrag, i)); return; }
+        var zeile = document.createElement('div');
+        zeile.className = def.klasse;
+        var markieren = function () { zeile.classList.toggle('fertig', !!eintrag.erledigt); };
+        def.felder.forEach(function (f) { zeile.appendChild(feldBauen(f, eintrag, markieren)); });
+        markieren();
+        zeile.appendChild(wegKnopf('Zeile löschen', function () {
+          plan[name].splice(i, 1);
+          listeZeigen(name);
+          speichern();
+        }));
+        box.appendChild(zeile);
+      });
+      box.querySelectorAll('textarea').forEach(autoHoehe);
+    }
+
+    function austauschKarte(eintrag, i) {
+      var karte = document.createElement('div');
+      karte.className = 'austausch';
+      var titel = document.createElement('div');
+      titel.className = 'titel';
+      var t = document.createElement('strong');
+      t.textContent = 'Austausch ' + (i + 1);
+      var datum = feldBauen({ name: 'datum', typ: 'date' }, eintrag, function () {});
+      datum.setAttribute('aria-label', 'Datum von Austausch ' + (i + 1));
+      var links = document.createElement('span');
+      links.style.display = 'flex'; links.style.gap = '8px'; links.style.alignItems = 'center';
+      links.appendChild(t); links.appendChild(datum);
+      titel.appendChild(links);
+      titel.appendChild(wegKnopf('Austausch löschen', function () {
+        if (!confirm('Austausch ' + (i + 1) + ' wirklich löschen?')) return;
+        plan.austausch.splice(i, 1);
+        listeZeigen('austausch');
+        speichern();
+      }));
+      karte.appendChild(titel);
+      AUSTAUSCH_FELDER.forEach(function (f) {
+        var l = document.createElement('label');
+        l.textContent = f.titel;
+        var ta = feldBauen({ name: f.name, typ: 'textarea' }, eintrag, function () {});
+        ta.setAttribute('aria-label', f.titel);
+        karte.appendChild(l);
+        karte.appendChild(ta);
+      });
+      return karte;
+    }
+
+    function termineZeigen() {
+      var ul = document.getElementById('termine');
+      ul.textContent = '';
+      if (!plan.start) {
+        var li0 = document.createElement('li');
+        li0.className = 'hilfe';
+        li0.textContent = 'Zuerst den Projektstart eintragen.';
+        ul.appendChild(li0);
+        return;
+      }
+      var start = new Date(plan.start + 'T12:00:00');
+      if (isNaN(start)) return;
+      var jetzt = new Date(heute() + 'T12:00:00');
+      var naechsterGesetzt = false;
+      for (var k = 1; k <= 4; k++) {
+        var d = new Date(start.getTime() + k * 28 * 86400000);
+        var iso = d.toISOString().slice(0, 10);
+        var li = document.createElement('li');
+        li.textContent = datumText(iso, true);
+        if (!naechsterGesetzt && d >= jetzt) {
+          li.className = 'naechster';
+          li.textContent += ' (nächster)';
+          naechsterGesetzt = true;
+        }
+        ul.appendChild(li);
+      }
+    }
+
+    function allesZeigen() {
+      document.body.classList.toggle('nurlesen', nurLesen);
+      document.querySelectorAll('[data-feld]').forEach(function (el) {
+        var k = el.dataset.feld;
+        if (el.type === 'checkbox') el.checked = !!plan[k]; else el.value = plan[k] || '';
+        el.disabled = nurLesen;
+        if (el.tagName === 'TEXTAREA') autoHoehe(el);
+      });
+      Object.keys(LISTEN).forEach(listeZeigen);
+      termineZeigen();
+      document.getElementById('ueberschrift').textContent = plan.titel ? 'Projektplan: ' + plan.titel : 'Projektplan';
+      document.title = (plan.titel ? plan.titel + ' – ' : '') + 'Projektplan';
+      statusZeigen();
+    }
+
+    // Einfache Felder (data-feld) einmal verbinden
+    document.querySelectorAll('[data-feld]').forEach(function (el) {
+      el.addEventListener(el.type === 'checkbox' || el.tagName === 'SELECT' || el.type === 'date' ? 'change' : 'input', function () {
+        var k = el.dataset.feld;
+        plan[k] = el.type === 'checkbox' ? el.checked : el.value;
+        if (el.tagName === 'TEXTAREA') autoHoehe(el);
+        if (k === 'start') termineZeigen();
+        if (k === 'titel') {
+          document.getElementById('ueberschrift').textContent = plan.titel ? 'Projektplan: ' + plan.titel : 'Projektplan';
+        }
+        speichern();
+      });
+    });
+
+    document.querySelectorAll('[data-neu]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var name = b.dataset.neu;
+        plan[name].push(LISTEN[name].leer());
+        listeZeigen(name);
+        speichern();
+        var box = document.getElementById('liste-' + name);
+        var erstes = box.lastElementChild && box.lastElementChild.querySelector('textarea, input[type=text]');
+        if (erstes) erstes.focus();
+      });
+    });
+
+    // ---------- Link zum Teilen ----------
+    // Der ganze Plan steht komprimiert hinter dem # in der Adresse. Dieser Teil wird nicht an den Server geschickt.
+    function zuBase64Url(bytes) {
+      var s = '';
+      for (var i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+      return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    }
+    function ausBase64Url(text) {
+      var s = atob(text.replace(/-/g, '+').replace(/_/g, '/'));
+      var bytes = new Uint8Array(s.length);
+      for (var i = 0; i < s.length; i++) bytes[i] = s.charCodeAt(i);
+      return bytes;
+    }
+    async function durchStrom(bytes, strom) {
+      var antwort = new Response(new Blob([bytes]).stream().pipeThrough(strom));
+      return new Uint8Array(await antwort.arrayBuffer());
+    }
+
+    async function linkErzeugen() {
+      var bytes = new TextEncoder().encode(JSON.stringify(plan));
+      var basis = location.origin + location.pathname;
+      if (typeof CompressionStream === 'function') {
+        return basis + '#plan=' + zuBase64Url(await durchStrom(bytes, new CompressionStream('deflate-raw')));
+      }
+      return basis + '#planj=' + zuBase64Url(bytes);
+    }
+
+    async function planAusLink(hash) {
+      var m = /^#(plan|planj)=([A-Za-z0-9_-]+)$/.exec(hash);
+      if (!m) return null;
+      var bytes = ausBase64Url(m[2]);
+      if (m[1] === 'plan') bytes = await durchStrom(bytes, new DecompressionStream('deflate-raw'));
+      return bereinigen(JSON.parse(new TextDecoder().decode(bytes)));
+    }
+
+    async function teilen() {
+      var link = await linkErzeugen();
+      var feld = document.getElementById('link');
+      feld.value = link;
+      document.getElementById('linkfeld').hidden = false;
+      autoHoehe(feld);
+      var hilfe = document.getElementById('link-hilfe');
+      var kopiert = false;
+      try { await navigator.clipboard.writeText(link); kopiert = true; } catch (e) { /* dann von Hand kopieren */ }
+      hilfe.textContent = (kopiert ? 'ist kopiert. Füge ihn in eine Nachricht an die Lehrperson ein.' : 'Markieren, kopieren und in eine Nachricht einfügen.') +
+        (link.length > 8000 ? ' Der Link ist sehr lang. Falls er nicht ankommt, schicke die Datei («Als Datei sichern»).' : '');
+      document.getElementById('linkfeld').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      feld.select();
+    }
+
+    // ---------- Datei ----------
+    function dateiname() {
+      var titel = (plan.titel || 'projektplan').toLowerCase()
+        .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      return 'projektplan-' + (titel || 'plan') + '-' + heute() + '.json';
+    }
+    function alsDateiSichern() {
+      var blob = new Blob([JSON.stringify(plan, null, 2)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = dateiname();
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    document.getElementById('datei').addEventListener('change', function (ev) {
+      var datei = ev.target.files[0];
+      ev.target.value = '';
+      if (!datei) return;
+      datei.text().then(function (text) {
+        var roh = JSON.parse(text);
+        if (!roh || roh.version !== 1) throw new Error('keine Projektplan-Datei');
+        if (!confirm('Den Plan aus der Datei laden? Der Plan in diesem Browser wird ersetzt.')) return;
+        plan = bereinigen(roh);
+        speichern();
+        allesZeigen();
+      }).catch(function () { alert('Diese Datei ist kein Projektplan.'); });
+    });
+
+    // ---------- Ablauf ----------
+    var plan = ladenAusBrowser();
+    var eigenerPlan = plan;
+    var nurLesen = false;
+
+    async function linkPruefen() {
+      if (!/^#planj?=/.test(location.hash)) {
+        nurLesen = false;
+        plan = eigenerPlan;
+        document.getElementById('geteilt-hinweis').hidden = true;
+        allesZeigen();
+        return;
+      }
+      try {
+        var geteilt = await planAusLink(location.hash);
+        if (!geteilt) throw new Error('leer');
+        plan = geteilt;
+        nurLesen = true;
+        document.getElementById('geteilt-stand').textContent = plan.geaendert
+          ? '(Stand ' + new Date(plan.geaendert).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' }) + ')' : '';
+        document.getElementById('geteilt-hinweis').hidden = false;
+      } catch (e) {
+        alert('Dieser Link ist unvollständig oder beschädigt. Es wird dein eigener Plan gezeigt.');
+        history.replaceState(null, '', location.pathname);
+        nurLesen = false;
+        plan = eigenerPlan;
+        document.getElementById('geteilt-hinweis').hidden = true;
+      }
+      allesZeigen();
+    }
+
+    function verstecke(id) { document.getElementById(id).hidden = true; }
+
+    document.getElementById('teilen').addEventListener('click', teilen);
+    document.getElementById('teilen2').addEventListener('click', teilen);
+    document.getElementById('sichern').addEventListener('click', alsDateiSichern);
+    document.getElementById('laden').addEventListener('click', function () { document.getElementById('datei').click(); });
+    document.getElementById('drucken').addEventListener('click', function () { window.print(); });
+    document.getElementById('loeschen').addEventListener('click', function () {
+      if (!confirm('Den ganzen Plan in diesem Browser löschen? Sichere ihn vorher als Datei, wenn du ihn noch brauchst.')) return;
+      try { localStorage.removeItem(SCHLUESSEL); } catch (e) { /* nichts zu tun */ }
+      eigenerPlan = plan = neuerPlan();
+      verstecke('linkfeld');
+      allesZeigen();
+    });
+    document.getElementById('uebernehmen').addEventListener('click', function () {
+      if (!confirm('Diesen Plan in deinen Browser übernehmen? Dein bisheriger Plan in diesem Browser wird ersetzt.')) return;
+      var uebernommen = plan;
+      history.replaceState(null, '', location.pathname);
+      nurLesen = false;
+      eigenerPlan = plan = uebernommen;
+      document.getElementById('geteilt-hinweis').hidden = true;
+      speichern();
+      allesZeigen();
+    });
+    document.getElementById('eigener').addEventListener('click', function () {
+      history.replaceState(null, '', location.pathname);
+      linkPruefen();
+    });
+    window.addEventListener('hashchange', linkPruefen);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) alleHoehen(); });
+    window.addEventListener('beforeprint', alleHoehen);
+    var hoehenTimer = null;
+    window.addEventListener('resize', function () { clearTimeout(hoehenTimer); hoehenTimer = setTimeout(alleHoehen, 150); });
+    window.addEventListener('load', alleHoehen);
+
+    linkPruefen();
+  </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ redirect_from: /lektionen/03-projektstart.html
 Jetzt wird es dein Projekt. Du arbeitest allein oder in einer Gruppe (**max. 3 Personen**).
 Du hast **10 Doppellektionen** Zeit. Bei Interesse kannst du danach weiterbauen.
 
-## Vier Richtungen
+## Fünf Richtungen
 
 ### Spiele mit Gestensteuerung
 Ein Spiel, das du mit Kamera und KI steuerst. Gesten eignen sich für **grobe, klar unterscheidbare** Aktionen.
@@ -40,6 +40,26 @@ Zum Einstieg oder zum Nachlesen: [Tutorial: Ein Spiel mit Python entwickeln](../
 
 Startpunkt: Dein Team bekommt ein eigenes Repo mit einem kleinen Beispielspiel: [Anleitung: Team-Repo klonen und online stellen](../anleitungen/spiel-team-repo.md).
 
+### Eigenes Projekt
+Du hast eine eigene Idee, die in keine der vier Richtungen passt? Dann setze sie um. Wichtig ist hier besonders ein
+**guter Projektplan**: Was genau soll am Ende laufen, und welche Zwischenziele hast du bis dahin? Bespreche die Idee
+vor dem Start mit der Lehrperson.
+
+Beispielideen: eine App oder Webseite für deinen Verein · ein Werkzeug, das dir im Alltag hilft · ein Datenprojekt mit eigenen Messungen · ein Programm zu einem Thema aus einem anderen Fach
+
+## Projektplan und Austausch alle 4 Wochen
+Das gilt für **alle Projekte**, egal in welcher Richtung, und auch, wenn du danach weiterbaust.
+
+1. **Projektplan ausfüllen:** im **[Projektplan online](https://masta-nksa.github.io/schere-stein-papier/projektplan/)**:
+   Idee und Beschreibung, Ziele in drei Stufen, Milestones mit Datum, Risiken. Der Plan wird in deinem Browser gespeichert.
+2. **Plan teilen:** Mit **Link zum Teilen** bekommst du einen Link, der den ganzen Plan enthält. Schicke ihn der Lehrperson
+   (per Teams oder Mail). Das ist dein erster Milestone.
+3. **Alle 4 Wochen Austausch:** Vorher trägst du im Plan ein, was läuft, was nicht und was als Nächstes dran ist, und passt die
+   Milestones an. Dann schickst du wieder den Link. Im Austausch schauen wir gemeinsam, wo du stehst und wie es weitergeht.
+
+Im Team führt eine Person den Plan und schickt den Link auch den anderen. Sichere den Plan ab und zu als Datei:
+Wenn die Browserdaten gelöscht werden, ist er sonst weg.
+
 ## Drei Stufen
 Jedes Projekt ist so aufgebaut. Du musst nicht alle Stufen schaffen.
 
@@ -49,12 +69,13 @@ Jedes Projekt ist so aufgebaut. Du musst nicht alle Stufen schaffen.
 | **2. Erweiterung** | Eine sinnvolle Erweiterung deiner Idee | Wenn die Zeit reicht |
 | **3. Vertiefung** | Etwas Anspruchsvolleres, z. B. Online-Multiplayer oder ein lernender Gegner | Nur bei Lust und Zeit |
 
-Etwa nach der Hälfte gibt es eine **Zwischenstand-Runde**: Alle zeigen kurz, was läuft. Danach entscheiden wir gemeinsam, wie es weitergeht.
+Beim Austausch alle 4 Wochen entscheiden wir gemeinsam, ob die Basis steht und wie es weitergeht.
 
 ## Ablauf beim gemeinsamen Projektstart
 1. **Ideenmarkt:** Jede Person stellt eine Idee in 2 Minuten vor.
 2. **Gruppen bilden:** allein oder zu zweit oder zu dritt.
-3. **Projektplan:** Fülle die [Projektplan-Vorlage](../vorlagen/projektplan.md) aus. Das ist dein erster Milestone.
+3. **Projektplan:** Fülle den [Projektplan online](https://masta-nksa.github.io/schere-stein-papier/projektplan/) aus und schicke der Lehrperson den Link. Das ist dein erster Milestone.
+   (Lieber auf Papier oder als Datei im Repo? Dafür gibt es die [Vorlage zum Ausdrucken](../vorlagen/projektplan.md).)
 
 ## Gehäuse und Lasercutter
 Die Lasercutter-Einführung kommt nach etwa vier Wochen Projektphase. Plane ein Gehäuse deshalb eher gegen Ende ein.

@@ -1,7 +1,7 @@
 # Einstieg: 3 × 90 Minuten (Lehrperson)
 
 Der Einstieg besteht aus vier **Etappen**: 0 Setup, 1 micro:bit, 2 KI im Browser, 3 Projektstart. Alle bauen dasselbe
-Mini-Projekt (Schere-Stein-Papier), das alle vier Projektrichtungen berührt. Ab Etappe 3 wird projektartig gearbeitet.
+Mini-Projekt (Schere-Stein-Papier), das die ersten vier Projektrichtungen berührt (die fünfte ist ein eigenes Projekt). Ab Etappe 3 wird projektartig gearbeitet.
 
 Die SuS gehen die Etappen **in ihrem eigenen Tempo**: Wer fertig ist, geht zur nächsten Etappe weiter. Die Zeitpläne
 unten sind ein **Richtplan** für drei Doppellektionen. Die kurzen Inputs (z. B. `ergebnis()` an der Tafel, das Protokoll)
@@ -18,6 +18,7 @@ Etappe 3 (Ideenmarkt, Gruppen bilden) findet gemeinsam statt. Schnelle können v
 | KI bewegt etwas | Kamera erkennt ein Handzeichen, Hardware reagiert |
 | Bauen und Robotik | Etappe 1 ist reine Hardware: Sensoren, Ausgaben, Funk |
 | Spieleprogrammierung | Spiellogik selbst programmieren (`ergebnis()`, `runde.js`), Zustände einer Runde (Countdown, Ergebnis) |
+| Eigenes Projekt | Eingabe → Verarbeitung → Ausgabe als Denkmuster für jede eigene Idee |
 
 Drei klar unterscheidbare Handzeichen sind zudem ideal für Teachable Machine.
 
@@ -61,10 +62,10 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 
 | Min. | Inhalt |
 |---|---|
-| 0–20 | Input: vier Richtungen, drei Stufen, Projektplan und Milestones |
+| 0–20 | Input: fünf Richtungen, drei Stufen, Projektplan online, Austausch alle 4 Wochen |
 | 20–40 | Ideenmarkt: 2-Minuten-Pitch pro Idee |
 | 40–50 | Gruppen bilden (max. 3 oder allein) |
-| 50–90 | Projektplan ausfüllen, Milestone 0 und 1 definieren, erste Arbeitsschritte |
+| 50–90 | Projektplan online ausfüllen, Milestones mit Datum, Link an die Lehrperson schicken, erste Arbeitsschritte |
 
 ## Differenzierung: eigenes Tempo
 - **Eigenes Tempo:** Wer eine Etappe fertig hat, geht zur nächsten weiter. Vor Etappe 2 braucht es Git, VS Code und den geklonten Arbeitsordner ([Anleitung](../anleitungen/github-vscode.md)).
@@ -107,8 +108,17 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 
 ## Für die Projektphase
 - **Neopixel:** Streifen in kurze Stücke schneiden und Anschlüsse anlöten. Das Löten kann auch eine Aufgabe in der Richtung „Bauen und Robotik“ sein.
-- **Zwischenstand-Runde** etwa nach der Hälfte der Projektphase (zugleich Entscheidungspunkt Basis/Erweiterung), dazu eine Schlusspräsentation.
+- **Austausch alle 4 Wochen** mit jedem Team (bei 10 Doppellektionen etwa zweimal, zugleich Entscheidungspunkt Basis/Erweiterung), dazu eine Schlusspräsentation. Gilt auch, wenn Projekte danach weiterlaufen.
 - **Lasercutter-Einführung** nach etwa vier Wochen Projektphase.
+
+## Projektplan und Austausch
+- **Projektplan online:** [masta-nksa.github.io/schere-stein-papier/projektplan](https://masta-nksa.github.io/schere-stein-papier/projektplan/) (Datei `projektplan/index.html`, reines HTML ohne Server). Teile: Projekt und Beschreibung, Ziele in drei Stufen, Milestones mit Datum, Risiken, Austausch-Einträge, KI-Regel. Für Papier: `vorlagen/projektplan.md`.
+- **Speichern:** nur im Browser der SuS (localStorage). Löschen sie die Browserdaten oder wechseln das Gerät, ist der Plan dort weg. Darum ab und zu «Als Datei sichern» (JSON) und vor jedem Austausch den Link schicken.
+- **Teilen:** «Link zum Teilen» packt den ganzen Plan komprimiert hinter das `#` der Adresse. Dieser Teil geht nicht an GitHub, der Plan steht nur im Link selbst. Die SuS schicken ihn per Teams oder Mail.
+- **Ansehen:** Link öffnen. Der Plan erscheint gesperrt (nur lesen), mit dem Stand. Dein eigener Plan im Browser bleibt unberührt. «Als Datei sichern» legt diesen Stand als JSON-Datei ab (zum Archivieren), «In meinen Browser übernehmen» ersetzt den Plan in deinem Browser.
+- **Sichern bei der Lehrperson:** Die geschickten Links sind die Ablage, jeder Link ist ein fester Stand. Zum Vergleichen den alten und den neuen Link öffnen. Wer lieber Dateien ablegt: Link öffnen, «Als Datei sichern».
+- Die Links enthalten Vornamen und Projektinhalte: nicht öffentlich posten, auch nicht in Issues oder Repos.
+- **Austausch-Termine:** Die Seite rechnet ab dem Projektstart alle 28 Tage einen Termin aus und zeigt den nächsten an.
 
 ## Team-Repos für die Spieleprogrammierung
 - **Vorlage:** Template-Repo [masta-nksa/spiel-vorlage](https://github.com/masta-nksa/spiel-vorlage), online unter [masta-nksa.github.io/spiel-vorlage](https://masta-nksa.github.io/spiel-vorlage/). Python mit pygame-ce, die GitHub-Action baut bei jedem Push mit pygbag und stellt das Spiel auf GitHub Pages. Eine Kopie liegt hier unter `spiel-vorlage/`. Es gibt keinen automatischen Abgleich: Änderungen an beiden Orten machen.
@@ -122,5 +132,5 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - **Vorher testen:** Im Schul-WLAN prüfen, ob `masta-nksa.github.io` und `pygame-web.github.io` erreichbar sind (von dort lädt der Browser Python und pygame-ce).
 
 ## Rahmen
-- Das Freifach ist freiwillig und wird nicht benotet. Milestones und Projektplan sind Orientierungshilfen ohne Abgabepflicht.
+- Das Freifach ist freiwillig und wird nicht benotet. Der **Projektplan ist für alle verbindlich**: ausfüllen, teilen und vor jedem Austausch nachführen.
 - Bei Interesse lassen sich bis zu 15 Doppellektionen anhängen.
