@@ -129,6 +129,7 @@ Die Zeit ist knapp. **Schritt 4** gilt für alle Paare, die Schritt 3 fertig hab
 - **Ein weiteres Repo anlegen:** *Use this template* in `spiel-vorlage`, Owner `masta-nksa`, Public. Danach *Settings → Pages → Source: GitHub Actions* und, falls der erste Lauf rot ist, *Actions → Spiel online stellen → Run workflow*. Mit der GitHub CLI geht das auch per Befehl (`gh repo create masta-nksa/spiel-team-6 --public --template masta-nksa/spiel-vorlage`, dann `gh api -X POST repos/masta-nksa/spiel-team-6/pages -f build_type=workflow`).
 - Änderungen an der Vorlage kommen **nicht** in schon angelegte Team-Repos.
 - **Tutorial** zum Selbststudium: [beispiele/sternenfaenger/](../beispiele/sternenfaenger/README.md), sechs Schritte vom Fenster bis zur Vorlage, Schritte 1–4 als lauffähige Einzeldateien (geht auch ins Arbeits-Repo). Kopien davon liegen als `tutorial/` in der Vorlage und in den Team-Repos (Kopfzeile mit Startbefehl angepasst). Kein automatischer Abgleich: Änderungen an den Schritten an allen Orten nachführen.
+- **OOP-Grundlagen:** [beispiele/oop-grundlagen/](../beispiele/oop-grundlagen/README.md), drei kurze Programme mit hüpfenden Bällen (Klasse und Objekt, Liste von Objekten, Vererbung mit `super()` und Polymorphie). Bewusst ohne Sprites, Delta-Time und asyncio, darum nicht für den Browser gedacht. Liegt nur im Material- und Arbeits-Repo.
 - **Vorher testen:** Im Schul-WLAN prüfen, ob `masta-nksa.github.io` und `pygame-web.github.io` erreichbar sind (von dort lädt der Browser Python und pygame-ce).
 
 ## Rahmen

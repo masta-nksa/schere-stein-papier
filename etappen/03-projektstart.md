@@ -37,6 +37,7 @@ Bei jedem Push geht dein Spiel online und läuft im Browser, auch auf dem Handy.
 Beispielideen: Jump'n'Run mit mehreren Levels · Space Shooter mit Gegnerwellen · Top-down-Abenteuer mit Karte · Puzzlespiel · Tower Defense
 
 Zum Einstieg oder zum Nachlesen: [Tutorial: Ein Spiel mit Python entwickeln](../beispiele/sternenfaenger/README.md), in sechs Schritten vom leeren Fenster bis zum Spiel im Browser.
+Neu bei Klassen und Vererbung? Dann zuerst [OOP-Grundlagen](../beispiele/oop-grundlagen/README.md): hüpfende Bälle in drei kurzen Programmen.
 
 Startpunkt: Dein Team bekommt ein eigenes Repo mit einem kleinen Beispielspiel: [Anleitung: Team-Repo klonen und online stellen](../anleitungen/spiel-team-repo.md).
 
