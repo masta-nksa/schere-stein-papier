@@ -35,11 +35,12 @@
     .zeile { display: grid; gap: 6px; align-items: start; padding: 6px 0; border-bottom: 1px solid #eaeef2; }
     .zeile:last-child { border-bottom: none; }
     .zeile.ms { grid-template-columns: 1fr 9em 10em 4.5em 2em; }
+    .zeile.ms textarea { min-height: 3.2em; }
     .zeile.risiko { grid-template-columns: 1fr 1fr 2em; }
     .kopf { font-size: 0.85rem; color: var(--leise); font-weight: 600; border-bottom: 1px solid var(--rand); }
     .zeile .haken { display: flex; align-items: center; justify-content: center; height: 2.2em; }
     .zeile .haken input { width: 1.2em; height: 1.2em; }
-    .zeile.ms.fertig input[type=text] { text-decoration: line-through; color: var(--leise); }
+    .zeile.ms.fertig textarea { text-decoration: line-through; color: var(--leise); }
     .austausch { border: 1px solid var(--rand); border-radius: 8px; padding: 10px 12px; margin: 10px 0; background: #fbfcfd; }
     .austausch .titel { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
     .austausch .titel input { width: 11em; }
@@ -205,8 +206,8 @@
 
     var LISTEN = {
       milestones: { klasse: 'zeile ms', felder: [
-        { name: 'was', typ: 'text', platz: 'Was ist fertig und vorzeigbar?' },
-        { name: 'wer', typ: 'text', platz: 'Wer' },
+        { name: 'was', typ: 'textarea', platz: 'Was ist fertig und vorzeigbar?' },
+        { name: 'wer', typ: 'textarea', platz: 'Wer' },
         { name: 'bis', typ: 'date' },
         { name: 'erledigt', typ: 'checkbox' }
       ], leer: function () { return { was: '', wer: '', bis: '', erledigt: false }; } },
